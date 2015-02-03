@@ -1,0 +1,34 @@
+﻿빌드 시작: 2015-02-02 오후 8:38:46
+     1>2 노드의 "C:\Users\MIN\Documents\Visual Studio 2015\Projects\EnginePart1\EnginePart1.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\\Include" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source\winmain.cpp
+         winmain.cpp
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(2169): warning C4458: 'FVF' 선언은 클래스 멤버를 숨깁니다.
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(571): note: 'IDirect3DDevice9::FVF' 선언을 참조하십시오.
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(2232): warning C4458: 'FVF' 선언은 클래스 멤버를 숨깁니다.
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(571): note: 'IDirect3DDevice9::FVF' 선언을 참조하십시오.
+     1>c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\graphics.h(52): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\graphics.h(37): note: 'Graphics::width' 선언을 참조하십시오.
+     1>c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\graphics.h(52): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\graphics.h(38): note: 'Graphics::height' 선언을 참조하십시오.
+     1>c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\graphics.h(52): warning C4458: 'fullscreen' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\graphics.h(36): note: 'Graphics::fullscreen' 선언을 참조하십시오.
+     1>c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\game.h(36): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\game.h(39): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\maingame.h(19): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\visual studio 2015\projects\enginepart1\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MIN\Documents\Visual Studio 2015\Projects\EnginePart1\Debug\EnginePart1.exe" /NOLOGO /LIBPATH:"C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\\Lib\x86" d3d9.lib d3dx9.lib winmm.lib xinput.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\MIN\Documents\Visual Studio 2015\Projects\EnginePart1\Debug\EnginePart1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MIN\Documents\Visual Studio 2015\Projects\EnginePart1\Debug\EnginePart1.lib" /MACHINE:X86 /SAFESEH Debug\game.obj
+         Debug\graphics.obj
+         Debug\input.obj
+         Debug\MainGame.obj
+         Debug\winmain.obj
+     1>game.obj : warning LNK4075: '/EDITANDCONTINUE'이(가) '/SAFESEH' 사양으로 인해 무시됩니다.
+         EnginePart1.vcxproj -> C:\Users\MIN\Documents\Visual Studio 2015\Projects\EnginePart1\Debug\EnginePart1.exe
+     1>"C:\Users\MIN\Documents\Visual Studio 2015\Projects\EnginePart1\EnginePart1.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:02.48
