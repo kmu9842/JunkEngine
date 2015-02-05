@@ -14,13 +14,14 @@
 #define LP_3DDEVICE LPDIRECT3DDEVICE9
 #define LP_3D       LPDIRECT3D9
 #define LP_SPRITE	LPD3DXSPRITE
+#define LP_TEXTURE  LPDIRECT3DTEXTURE9  // ?
 
 // 색상 정의
 #define COLOR_ARGB DWORD
 #define SETCOLOR_ARGB(a,r,g,b) \
     ((COLOR_ARGB)((((a)&0xff)<<24)|(((r)&0xff)<<16)|(((g)&0xff)<<8)|((b)&0xff)))
 
-class Graphics
+class Graphics 
 {
 private:
     // DirectX 포인터
@@ -38,6 +39,20 @@ private:
     int         height;
     COLOR_ARGB  backColor;      // 배경색
 
+	struct SpriteData 
+	{
+		int			width;			// 스프라이트의 폭, 높이 (단위는 픽셀)
+		int			Height;
+		float		x;				// 화면 위치
+		float		y;
+		float		scale;			// 크기
+		float		angle;			// 라디안 단위의 회전각도
+		RECT		rect;			// 큰 텍스처에서 사용할 이미지 선택
+		LP_TEXTURE	texture;		// 첵스처를 가리키는 포인터
+		bool		flipHorizontal;	// true일 경우 스프라이트를 수평으로 뒤집음
+		bool		flipVertical;	// true일 경우 스프라이트를 수직으로 뒤집음
+	};
+
     // D3D 파라미터 수정
     void    initD3Dpp();
 
@@ -46,6 +61,12 @@ public:
     virtual ~Graphics();
 
     void    releaseAll();
+
+	// 텍스처를 불러오는 함수
+	HRESULT loadTexture(const char *filename, COLOR_ARGB transcolor,
+							UINT &width, UINT &height, LP_TEXTURE &Texture);
+	// SpriteData 구조체의 정보를 토대로 스프라이트 그림
+	void drawSprite(const SpriteData &spriteData, COLOR_ARGB color);
 
     // DirectX 그래픽 초기화
     // hw = handle to window
@@ -69,17 +90,16 @@ public:
     // lost된 디바이스가 있는지 테스트
     HRESULT getDeviceState();
 
-    //=============================================================================
+    //============================================
     // 실행 속도를 위한 인라인 함수.
     // 함수 호출 오버헤드를 없애 실행속도를 높임.
-    //=============================================================================
+    //============================================
 
     // 화면 클리어
     void setBackColor(COLOR_ARGB c) {backColor = c;}
 
 	// Scene 시작, 백버퍼 클리어
-    HRESULT beginScene() 
-    {
+    HRESULT beginScene() {
         result = E_FAIL;
         if(device3d == NULL)
             return result;
@@ -90,8 +110,7 @@ public:
     }
 
 	// Scene 종료
-    HRESULT endScene() 
-    {
+    HRESULT endScene() {
         result = E_FAIL;
         if(device3d)
             result = device3d->EndScene();

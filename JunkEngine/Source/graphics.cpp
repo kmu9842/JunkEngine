@@ -1,7 +1,6 @@
 #include "..\\Headers\\graphics.h"
 
-Graphics::Graphics()
-{
+Graphics::Graphics(){
     direct3d = NULL;
     device3d = NULL;
     fullscreen = false;
@@ -10,13 +9,11 @@ Graphics::Graphics()
     backColor = SETCOLOR_ARGB(255,0,0,128); // 배경색
 }
 
-Graphics::~Graphics()
-{
+Graphics::~Graphics(){
     releaseAll();
 }
 
-void Graphics::releaseAll()
-{
+void Graphics::releaseAll(){
     SAFE_RELEASE(device3d);
     SAFE_RELEASE(direct3d);
 }
@@ -35,8 +32,7 @@ void Graphics::initialize(HWND hw, int w, int h, bool full)
         throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing Direct3D"));
 
     initD3Dpp();        // D3D 프리젠테이션 파라미터 초기화
-    if(fullscreen)      // 풀스크린 모드일 경우
-    {
+    if(fullscreen){		// 풀스크린 모드일 경우
         if(isAdapterCompatible())   // 어뎁터 호환여부 검사
             // set the refresh rate with a compatible one
             d3dpp.FullScreen_RefreshRateInHz = pMode.RefreshRate;
@@ -68,14 +64,16 @@ void Graphics::initialize(HWND hw, int w, int h, bool full)
 
     if (FAILED(result))
         throw(GameError(gameErrorNS::FATAL_ERROR, "Error creating Direct3D device"));
+
+	result = D3DXCreateSprite(device3d,&sprite);
+
 	if (FAILED(result))
 		throw(GameError(gameErrorNS::FATAL_ERROR, "Error creating Direct3D sprite"));
  
 }
 
 // D3D 프리젠테이션 파라미터 초기화
-void Graphics::initD3Dpp()
-{
+void Graphics::initD3Dpp(){
     try{
         ZeroMemory(&d3dpp, sizeof(d3dpp));              // fill the structure with 0
         // fill in the parameters we need
@@ -90,39 +88,127 @@ void Graphics::initD3Dpp()
         d3dpp.hDeviceWindow     = hwnd;
         d3dpp.Windowed          = (!fullscreen);
         d3dpp.PresentationInterval   = D3DPRESENT_INTERVAL_IMMEDIATE;
-    } catch(...)
-    {
+    } 
+	catch(...){
         throw(GameError(gameErrorNS::FATAL_ERROR, 
                 "Error initializing D3D presentation parameters"));
 
     }
 }
 
-//=============================================================================
-// Display the backbuffer
-//=============================================================================
-HRESULT Graphics::showBackbuffer()
-{
-    result = E_FAIL;    // default to fail, replace on success
-    // Display backbuffer to screen
+void Graphics::drawSprite(const SpriteData &spriteData, COLOR_ARGB color){	
+	if (spriteData.texture == NULL) // 텍스처가 없을경우 그냥 종료
+		return;
+
+	// 스프라이트의 중심을 찾음
+	D3DXVECTOR2 spriteCenter = D3DXVECTOR2(
+		(float)(spriteData.width/2 * spriteData.scale),
+		(float)(spriteData.Height/2 * spriteData.scale));
+
+	// 스프라이트의 화면 위치
+	D3DXVECTOR2 translate = D3DXVECTOR2((float)spriteData.x, (float)spriteData.y);
+
+	// x, y 크기 조정
+	D3DXVECTOR2 scaling(spriteData.scale, spriteData.scale);
+
+	// 수평으로 뒤집기
+	if (spriteData.flipHorizontal) {
+		scaling.x *= -1;
+		// 뒤집은 이미지의 중심을 가져옴
+		spriteCenter.x -= (float)(spriteData.width / 2 * spriteData.scale);
+		// 뒤집은 이미지를 오른쪽으로 이동시켜 원래 위치에 있게함
+		translate.x += (float)(spriteData.width * spriteData.scale);
+	}
+
+	// 수직으로 뒤집기
+	if (spriteData.flipHorizontal) {
+		scaling.y *= -1;
+		spriteCenter.y -= (float)(spriteData.Height / 2 * spriteData.scale);
+		translate.y += (float)(spriteData.Height * spriteData.scale);
+	}
+
+	// 스프라이트를 회전, 크기 조정, 배치하기 위한 행렬을 생성한다.
+	D3DXMATRIX matrix;
+	D3DXMatrixTransformation2D(
+		&matrix,					// 행렬
+		NULL,						// 기준점을 왼쪽 상단으로 유지
+		0.0f,						// 크기 조정 회전 없음
+		&scaling,					// 크기 조정 값
+		&spriteCenter,				// 회전 중심
+		(float)(spriteData.angle),	// 회전 각도
+		&translate					// X, Y 위치
+	);
+
+	// 스프라이트에게 행렬에 대해 알려준다.
+	sprite->SetTransform(&matrix);
+
+	// 스프라이트를 그린다.
+	sprite->Draw(spriteData.texture, &spriteData.rect, NULL, NULL, color);
+
+	// ------------------------------------------------------------------ //
+	// 그래픽스 신 시작 -> 스프라이트 시작 -> 행렬을 통한 스프라이트 변환 // 
+	// -> 스프라이트 그리기(또는 행렬을 통한 스프라이트 변환으로 반복) -> //
+	// 스프라이트 종료 -> 그래픽스 신 종료		                          //
+	// ------------------------------------------------------------------ //
+}
+
+HRESULT Graphics::loadTexture(const char *filename, COLOR_ARGB transcolor,
+								UINT &width, UINT &height, LP_TEXTURE &texture){
+	
+	// 파일 정보를 읽기 위한 구조체
+	D3DXIMAGE_INFO info;
+	result = E_FAIL;
+
+	try {
+		if (filename == NULL) { // 파일이 없을경우 에러 호출
+			texture = NULL;
+			return D3DERR_INVALIDCALL;
+		}
+
+		// 파일로부터 폭과 높이를 얻어냄
+		result = D3DXGetImageInfoFromFile(filename,&info);
+		if (result != D3D_OK) {
+			return result;
+		}
+		
+		// 파일을 불러와 새 택스처 생성
+		result = D3DXCreateTextureFromFileEx(
+			device3d,			// 3D 디바이스			
+			filename,			// 이미지 파일명
+			info.Width,			// 텍스처 폭, 높이
+			info.Height,
+			1,					// 밉맵 수준(연결하지 않을 시 1사용)
+			0,					// 사용할것 (DWORD Usage)
+			D3DFMT_UNKNOWN,		// 표면형식
+			D3DPOOL_DEFAULT,	// 텍스처를 위한 메모리 클래스
+			D3DX_DEFAULT,		// 이미지 필터
+			D3DX_DEFAULT,		// 밉 필터
+			transcolor,			// 투명도를 위한 색상 키
+			&info,				// 비트맵 파일 정보
+			NULL,				// 색상 팔레트
+			&texture			// 텍스처
+			);
+	}
+	catch (...) {
+		throw (GameError(gameErrorNS::FATAL_ERROR, "ERROR in Graphics::loadTexture"));
+	}
+
+	return result;
+}
+
+// 디스플레이 백버퍼
+HRESULT Graphics::showBackbuffer(){
+    result = E_FAIL;    // 평소에는 FAIL로, 성공하면 전환
+    // 백버퍼 스크린 설정
     result = device3d->Present(NULL, NULL, NULL, NULL);
     return result;
 }
 
-//=============================================================================
-// Checks the adapter to see if it is compatible with the BackBuffer height,
-// width and refresh rate specified in d3dpp. Fills in the pMode structure with
-// the format of the compatible mode, if found.
-// Pre: d3dpp is initialized.
-// Post: Returns true if compatible mode found and pMode structure is filled.
-//       Returns false if no compatible mode found.
-//=============================================================================
-bool Graphics::isAdapterCompatible()
-{
+// 어뎁터가 호환되는지 체크
+bool Graphics::isAdapterCompatible(){
     UINT modes = direct3d->GetAdapterModeCount(D3DADAPTER_DEFAULT, 
                                             d3dpp.BackBufferFormat);
-    for(UINT i=0; i<modes; i++)
-    {
+    for(UINT i=0; i<modes; i++){
         result = direct3d->EnumAdapterModes( D3DADAPTER_DEFAULT, 
                                         d3dpp.BackBufferFormat,
                                         i, &pMode);
@@ -135,9 +221,8 @@ bool Graphics::isAdapterCompatible()
 }
 
 // 로스트 상태된 디바이스 확인
-HRESULT Graphics::getDeviceState()
-{ 
-    result = E_FAIL;    
+HRESULT Graphics::getDeviceState(){ 
+    result = E_FAIL;   // 평소에는 FAIL로, 성공하면 전환
     if (device3d == NULL)
         return  result;
     result = device3d->TestCooperativeLevel(); 
@@ -145,8 +230,7 @@ HRESULT Graphics::getDeviceState()
 }
 
 // 그래픽 디바이스 리셋
-HRESULT Graphics::reset()
-{
+HRESULT Graphics::reset(){
     result = E_FAIL;    
     initD3Dpp();                        
     result = device3d->Reset(&d3dpp);   // 그래픽 디바이스 리셋을 실행
