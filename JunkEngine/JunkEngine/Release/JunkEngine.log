@@ -1,0 +1,68 @@
+﻿빌드 시작: 2015-02-05 오후 5:10:04
+     1>2 노드의 "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\MainGame.cpp ..\Source\game.cpp ..\Source\graphics.cpp ..\Source\winmain.cpp
+         MainGame.cpp
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(37): note: 'Graphics::width' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(38): note: 'Graphics::height' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'fullscreen' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(36): note: 'Graphics::fullscreen' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(36): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(39): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\MainGame.h(19): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>..\Source\MainGame.cpp(14): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+         game.cpp
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(37): note: 'Graphics::width' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(38): note: 'Graphics::height' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'fullscreen' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(36): note: 'Graphics::fullscreen' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(36): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(39): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>..\Source\game.cpp(17): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>..\Source\game.cpp(135): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+         graphics.cpp
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(52): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(37): note: 'Graphics::width' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(52): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(38): note: 'Graphics::height' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(52): warning C4458: 'fullscreen' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(36): note: 'Graphics::fullscreen' 선언을 참조하십시오.
+         winmain.cpp
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(37): note: 'Graphics::width' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(38): note: 'Graphics::height' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'fullscreen' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(36): note: 'Graphics::fullscreen' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(36): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(39): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\MainGame.h(19): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.exe" /NOLOGO XInput.lib d3d9.lib d3dx9.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.lib" /MACHINE:X86 /SAFESEH Release\game.obj
+         Release\graphics.obj
+         Release\input.obj
+         Release\MainGame.obj
+         Release\winmain.obj
+         코드를 생성하고 있습니다.
+         코드를 생성했습니다.
+         JunkEngine.vcxproj -> C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.exe
+     1>"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:03.87

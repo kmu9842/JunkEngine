@@ -1,0 +1,89 @@
+﻿빌드 시작: 2015-02-05 오후 5:04:20
+     1>2 노드의 "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\MainGame.cpp ..\Source\game.cpp ..\Source\graphics.cpp ..\Source\winmain.cpp
+         winmain.cpp
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(2169): warning C4458: 'FVF' 선언은 클래스 멤버를 숨깁니다.
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(571): note: 'IDirect3DDevice9::FVF' 선언을 참조하십시오.
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(2232): warning C4458: 'FVF' 선언은 클래스 멤버를 숨깁니다.
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(571): note: 'IDirect3DDevice9::FVF' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(37): note: 'Graphics::width' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(38): note: 'Graphics::height' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'fullscreen' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(36): note: 'Graphics::fullscreen' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(36): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(39): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\maingame.h(19): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+         graphics.cpp
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(2169): warning C4458: 'FVF' 선언은 클래스 멤버를 숨깁니다.
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(571): note: 'IDirect3DDevice9::FVF' 선언을 참조하십시오.
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(2232): warning C4458: 'FVF' 선언은 클래스 멤버를 숨깁니다.
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(571): note: 'IDirect3DDevice9::FVF' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(37): note: 'Graphics::width' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(38): note: 'Graphics::height' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'fullscreen' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(36): note: 'Graphics::fullscreen' 선언을 참조하십시오.
+         game.cpp
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(2169): warning C4458: 'FVF' 선언은 클래스 멤버를 숨깁니다.
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(571): note: 'IDirect3DDevice9::FVF' 선언을 참조하십시오.
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(2232): warning C4458: 'FVF' 선언은 클래스 멤버를 숨깁니다.
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(571): note: 'IDirect3DDevice9::FVF' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(37): note: 'Graphics::width' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(38): note: 'Graphics::height' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'fullscreen' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(36): note: 'Graphics::fullscreen' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(36): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(39): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\source\game.cpp(17): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\source\game.cpp(135): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+         MainGame.cpp
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(2169): warning C4458: 'FVF' 선언은 클래스 멤버를 숨깁니다.
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(571): note: 'IDirect3DDevice9::FVF' 선언을 참조하십시오.
+     1>c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(2232): warning C4458: 'FVF' 선언은 클래스 멤버를 숨깁니다.
+         c:\program files (x86)\microsoft directx sdk (june 2010)\include\d3d9.h(571): note: 'IDirect3DDevice9::FVF' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(37): note: 'Graphics::width' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(38): note: 'Graphics::height' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(52): warning C4458: 'fullscreen' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(36): note: 'Graphics::fullscreen' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(36): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(39): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\maingame.h(19): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\source\maingame.cpp(14): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
+         코드를 생성하고 있습니다...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Debug\JunkEngine.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Debug\JunkEngine.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Debug\JunkEngine.lib" /MACHINE:X86 Debug\game.obj
+         Debug\graphics.obj
+         Debug\input.obj
+         Debug\MainGame.obj
+         Debug\winmain.obj
+     1>game.obj : error LNK2019: __imp__timeBeginPeriod@4 외부 기호(참조 위치: "public: virtual void __thiscall Game::run(struct HWND__ *)" (?run@Game@@UAEXPAUHWND__@@@Z) 함수)에서 확인하지 못했습니다.
+     1>game.obj : error LNK2019: __imp__timeEndPeriod@4 외부 기호(참조 위치: "public: virtual void __thiscall Game::run(struct HWND__ *)" (?run@Game@@UAEXPAUHWND__@@@Z) 함수)에서 확인하지 못했습니다.
+     1>graphics.obj : error LNK2019: _Direct3DCreate9@4 외부 기호(참조 위치: "public: void __thiscall Graphics::initialize(struct HWND__ *,int,int,bool)" (?initialize@Graphics@@QAEXPAUHWND__@@HH_N@Z) 함수)에서 확인하지 못했습니다.
+     1>input.obj : error LNK2019: _XInputGetState@8 외부 기호(참조 위치: "public: void __thiscall Input::checkControllers(void)" (?checkControllers@Input@@QAEXXZ) 함수)에서 확인하지 못했습니다.
+     1>input.obj : error LNK2019: _XInputSetState@8 외부 기호(참조 위치: "public: void __thiscall Input::vibrateControllers(float)" (?vibrateControllers@Input@@QAEXM@Z) 함수)에서 확인하지 못했습니다.
+     1>C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\OLDNAMES.lib : warning LNK4272: 'UNKNOWN' 라이브러리 컴퓨터 종류가 'X86' 대상 컴퓨터 종류와 충돌합니다.
+     1>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Debug\JunkEngine.exe : fatal error LNK1120: 5개의 확인할 수 없는 외부 참조입니다.
+     1>"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" 프로젝트를 빌드했습니다(Build 대상). - 실패
+
+빌드하지 못했습니다.
+
+경과 시간: 00:00:04.99

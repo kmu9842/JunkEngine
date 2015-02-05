@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Game" Collapsed="true">
+    <Position X="1.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAgUAQDABABAAABEBAAQgAAiBABgIIBAAAAgUICA=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\game.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="graphics" />
+      <Field Name="input" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Graphics" Collapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgACgAEAIAkEIRAREEAAACACBAEBAQIAAECAAgAAAE=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\graphics.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainGame" Collapsed="true">
+    <Position X="1.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAABABAAAAGAAAAAAAAAAAAIIAAAAAAUAAA=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\MainGame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Input" Collapsed="true">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A8AQRAABW0AROEOABMEIIEWYHEEAwBBUQFAIAQgBAgA=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\input.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameError" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAiAAAAACAAAAAAAAAAAAAAAAAAAAIAAAgACAgACA=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\gameError.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
