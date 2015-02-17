@@ -41,17 +41,14 @@ void Graphics::initialize(HWND hw, int w, int h, bool full)
             "The graphics device does not support the specified resolution and/or format."));
     }
 
-    // determine if graphics card supports harware texturing and lighting and vertex shaders
     D3DCAPS9 caps;
     DWORD behavior;
     result = direct3d->GetDeviceCaps(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, &caps);
-    // If device doesn't support HW T&L or doesn't support 1.1 vertex 
-    // shaders in hardware, then switch to software vertex processing.
     if( (caps.DevCaps & D3DDEVCAPS_HWTRANSFORMANDLIGHT) == 0 ||
             caps.VertexShaderVersion < D3DVS_VERSION(1,1) )
-        behavior = D3DCREATE_SOFTWARE_VERTEXPROCESSING;  // use software only processing
+        behavior = D3DCREATE_SOFTWARE_VERTEXPROCESSING;  
     else
-        behavior = D3DCREATE_HARDWARE_VERTEXPROCESSING;  // use hardware only processing
+        behavior = D3DCREATE_HARDWARE_VERTEXPROCESSING; 
 
     //Direct3D 디바이스 생성
     result = direct3d->CreateDevice(
