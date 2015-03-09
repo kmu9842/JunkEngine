@@ -34,7 +34,7 @@ void Graphics::initialize(HWND hw, int w, int h, bool full)
     initD3Dpp();        // D3D 프리젠테이션 파라미터 초기화
     if(fullscreen){		// 풀스크린 모드일 경우
         if(isAdapterCompatible())   // 어뎁터 호환여부 검사
-            // set the refresh rate with a compatible one
+
             d3dpp.FullScreen_RefreshRateInHz = pMode.RefreshRate;
         else
             throw(GameError(gameErrorNS::FATAL_ERROR, 
@@ -72,14 +72,14 @@ void Graphics::initialize(HWND hw, int w, int h, bool full)
 // D3D 프리젠테이션 파라미터 초기화
 void Graphics::initD3Dpp(){
     try{
-        ZeroMemory(&d3dpp, sizeof(d3dpp));              // fill the structure with 0
-        // fill in the parameters we need
+        ZeroMemory(&d3dpp, sizeof(d3dpp));     
+		
         d3dpp.BackBufferWidth   = width;
         d3dpp.BackBufferHeight  = height;
-        if(fullscreen)                                  // if fullscreen
-            d3dpp.BackBufferFormat  = D3DFMT_X8R8G8B8;  // 24 bit color
+        if(fullscreen)                                  // 풀스크린 여부
+            d3dpp.BackBufferFormat  = D3DFMT_X8R8G8B8;  // 24비트 색상
         else
-            d3dpp.BackBufferFormat  = D3DFMT_UNKNOWN;   // use desktop setting
+            d3dpp.BackBufferFormat  = D3DFMT_UNKNOWN;   // 데스크톱에 맞춘 셋팅
         d3dpp.BackBufferCount   = 1;
         d3dpp.SwapEffect        = D3DSWAPEFFECT_DISCARD;
         d3dpp.hDeviceWindow     = hwnd;

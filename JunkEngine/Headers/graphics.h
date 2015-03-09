@@ -14,7 +14,7 @@
 #define LP_3DDEVICE LPDIRECT3DDEVICE9
 #define LP_3D       LPDIRECT3D9
 #define LP_SPRITE	LPD3DXSPRITE
-#define LP_TEXTURE  LPDIRECT3DTEXTURE9  // ?
+#define LP_TEXTURE  LPDIRECT3DTEXTURE9  // 
 
 // 색상 정의
 #define COLOR_ARGB DWORD
@@ -51,6 +51,20 @@ namespace graphicsNS
 	enum DISPLAY_MODE { TOGGLE, FULLSCREEN, WINDOW };
 }
 
+struct SpriteData
+{
+	int			width;			// 스프라이트의 폭, 높이 (단위는 픽셀)
+	int			height;
+	float		x;				// 화면 위치
+	float		y;
+	float		scale;			// 크기
+	float		angle;			// 라디안 단위의 회전각도
+	RECT		rect;			// 큰 텍스처에서 사용할 이미지 선택
+	LP_TEXTURE	texture;		// 첵스처를 가리키는 포인터
+	bool		flipHorizontal;	// true일 경우 스프라이트를 수평으로 뒤집음
+	bool		flipVertical;	// true일 경우 스프라이트를 수직으로 뒤집음
+};
+
 class Graphics 
 {
 private:
@@ -68,20 +82,6 @@ private:
     int         width;
     int         height;
     COLOR_ARGB  backColor;      // 배경색
-
-	struct SpriteData 
-	{
-		int			width;			// 스프라이트의 폭, 높이 (단위는 픽셀)
-		int			Height;
-		float		x;				// 화면 위치
-		float		y;
-		float		scale;			// 크기
-		float		angle;			// 라디안 단위의 회전각도
-		RECT		rect;			// 큰 텍스처에서 사용할 이미지 선택
-		LP_TEXTURE	texture;		// 첵스처를 가리키는 포인터
-		bool		flipHorizontal;	// true일 경우 스프라이트를 수평으로 뒤집음
-		bool		flipVertical;	// true일 경우 스프라이트를 수직으로 뒤집음
-	};
 
     // D3D 파라미터 수정
     void    initD3Dpp();

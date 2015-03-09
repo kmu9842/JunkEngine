@@ -4,7 +4,7 @@
 
 #include <windows.h>
 
-#define TRANSCOLOR  SETCOLOR_ARGB(0,255,0,255) // transparent color (magenta)
+#define TRANSCOLOR  SETCOLOR_ARGB(0,255,0,255) 
 
 //-------- 매크로들 --------//
 #define SAFE_DELETE(ptr)       { if (ptr) { delete (ptr); (ptr)=NULL; } }

@@ -74,6 +74,7 @@
   <ItemGroup>
     <ClCompile Include="..\Source\game.cpp" />
     <ClCompile Include="..\Source\graphics.cpp" />
+    <ClCompile Include="..\Source\image.cpp" />
     <ClCompile Include="..\Source\input.cpp" />
     <ClCompile Include="..\Source\MainGame.cpp" />
     <ClCompile Include="..\Source\textureManager.cpp" />
@@ -84,6 +85,7 @@
     <ClInclude Include="..\Headers\game.h" />
     <ClInclude Include="..\Headers\gameError.h" />
     <ClInclude Include="..\Headers\graphics.h" />
+    <ClInclude Include="..\Headers\image.h" />
     <ClInclude Include="..\Headers\input.h" />
     <ClInclude Include="..\Headers\MainGame.h" />
     <ClInclude Include="..\Headers\textureManager.h" />
