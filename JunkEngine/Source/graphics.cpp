@@ -100,7 +100,7 @@ void Graphics::drawSprite(const SpriteData &spriteData, COLOR_ARGB color){
 	// 스프라이트의 중심을 찾음
 	D3DXVECTOR2 spriteCenter = D3DXVECTOR2(
 		(float)(spriteData.width/2 * spriteData.scale),
-		(float)(spriteData.Height/2 * spriteData.scale));
+		(float)(spriteData.height/2 * spriteData.scale));
 
 	// 스프라이트의 화면 위치
 	D3DXVECTOR2 translate = D3DXVECTOR2((float)spriteData.x, (float)spriteData.y);
@@ -120,8 +120,8 @@ void Graphics::drawSprite(const SpriteData &spriteData, COLOR_ARGB color){
 	// 수직으로 뒤집기
 	if (spriteData.flipHorizontal) {
 		scaling.y *= -1;
-		spriteCenter.y -= (float)(spriteData.Height / 2 * spriteData.scale);
-		translate.y += (float)(spriteData.Height * spriteData.scale);
+		spriteCenter.y -= (float)(spriteData.height / 2 * spriteData.scale);
+		translate.y += (float)(spriteData.height * spriteData.scale);
 	}
 
 	// 스프라이트를 회전, 크기 조정, 배치하기 위한 행렬을 생성한다.
@@ -167,6 +167,8 @@ HRESULT Graphics::loadTexture(const char *filename, COLOR_ARGB transcolor,
 		if (result != D3D_OK) {
 			return result;
 		}
+		width = info.Width;
+		height = info.Height;
 		
 		// 파일을 불러와 새 택스처 생성
 		result = D3DXCreateTextureFromFileEx(

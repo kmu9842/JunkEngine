@@ -82,8 +82,11 @@ bool Image::initialize(Graphics *g, int width, int height, int ncols,
 //=============================================================================
 void Image::draw(COLOR_ARGB color)
 {
-    if (!visible || graphics == NULL)
-        return;
+	if (!visible || graphics == NULL) {
+		exit(0);
+		return;
+	}
+		
     // onReset()이 호출될 경우를 대비해 새로운 텍스처를 가져옴
     spriteData.texture = textureManager->getTexture();
     if(color == graphicsNS::FILTER)                     // 필터를 사용하여 그리는 경우
@@ -119,26 +122,26 @@ void Image::draw(SpriteData sd, COLOR_ARGB color)
 //=============================================================================
 void Image::update(float frameTime)
 {
-    if (endFrame - startFrame > 0)          // if animated sprite
-    {
-        animTimer += frameTime;             // total elapsed time
-        if (animTimer > frameDelay)
-        {
-            animTimer -= frameDelay;
-            currentFrame++;
-            if (currentFrame < startFrame || currentFrame > endFrame)
-            {
-                if(loop == true)            // if looping animation
-                    currentFrame = startFrame;
-                else                        // not looping animation
-                {
-                    currentFrame = endFrame;
-                    animComplete = true;    // animation complete
-                }
-            }
-            setRect();                      // set spriteData.rect
-        }
-    }
+	if (endFrame - startFrame > 0)          // if animated sprite
+	{
+		animTimer += frameTime;             // total elapsed time
+		if (animTimer > frameDelay)
+		{
+			animTimer -= frameDelay;
+			currentFrame++;
+			if (currentFrame < startFrame || currentFrame > endFrame)
+			{
+				if (loop == true)            // if looping animation
+					currentFrame = startFrame;
+				else                        // not looping animation
+				{
+					currentFrame = endFrame;
+					animComplete = true;    // animation complete
+				}
+			}
+			setRect();                      // set spriteData.rect
+		}
+	}
 }
 
 void Image::setCurrentFrame(int c) 
