@@ -141,9 +141,6 @@ void Image::update(float frameTime)
     }
 }
 
-//=============================================================================
-// Set the current frame of the image
-//=============================================================================
 void Image::setCurrentFrame(int c) 
 {
     if(c >= 0)
@@ -154,9 +151,6 @@ void Image::setCurrentFrame(int c)
     }
 }
 
-//=============================================================================
-//  Set spriteData.rect to draw currentFrame
-//=============================================================================
 inline void Image::setRect() 
 {
     // configure spriteData.rect to draw currentFrame
