@@ -87,6 +87,7 @@
     <ClInclude Include="..\Headers\graphics.h" />
     <ClInclude Include="..\Headers\image.h" />
     <ClInclude Include="..\Headers\input.h" />
+    <ClInclude Include="..\Headers\Junk2DSprite.h" />
     <ClInclude Include="..\Headers\MainGame.h" />
     <ClInclude Include="..\Headers\textureManager.h" />
   </ItemGroup>
