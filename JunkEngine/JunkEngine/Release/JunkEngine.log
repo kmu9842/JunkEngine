@@ -1,7 +1,7 @@
-﻿빌드 시작: 2015-03-11 오전 7:19:35
+﻿빌드 시작: 2015-03-17 오후 9:56:01
      1>2 노드의 "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" 프로젝트(Build 대상)입니다.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\MainGame.cpp ..\Source\graphics.cpp ..\Source\image.cpp ..\Source\winmain.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\MainGame.cpp ..\Source\image.cpp ..\Source\winmain.cpp
          MainGame.cpp
      1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
          c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: 'Graphics::width' 선언을 참조하십시오.
@@ -23,21 +23,6 @@
          c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
      1>..\Source\MainGame.cpp(14): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
          c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
-         graphics.cpp
-     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(97): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
-         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(82): note: 'Graphics::width' 선언을 참조하십시오.
-     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(97): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
-         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(83): note: 'Graphics::height' 선언을 참조하십시오.
-     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(103): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
-         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(82): note: 'Graphics::width' 선언을 참조하십시오.
-     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(103): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
-         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(83): note: 'Graphics::height' 선언을 참조하십시오.
-     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(103): warning C4458: 'fullscreen' 선언은 클래스 멤버를 숨깁니다.
-         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(81): note: 'Graphics::fullscreen' 선언을 참조하십시오.
-     1>..\Source\graphics.cpp(153): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
-         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(82): note: 'Graphics::width' 선언을 참조하십시오.
-     1>..\Source\graphics.cpp(153): warning C4458: 'height' 선언은 클래스 멤버를 숨깁니다.
-         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(83): note: 'Graphics::height' 선언을 참조하십시오.
          image.cpp
      1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: 'width' 선언은 클래스 멤버를 숨깁니다.
          c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: 'Graphics::width' 선언을 참조하십시오.
@@ -85,4 +70,4 @@
 
 빌드했습니다.
 
-경과 시간: 00:00:03.46
+경과 시간: 00:00:02.63

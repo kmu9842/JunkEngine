@@ -2,22 +2,21 @@
 #define _JUNK2DSPRITE_H           
 #define WIN32_LEAN_AND_MEAN
 
-class 
+#include "graphics.h"
+
+class Junk2DSprite
 {
 public:
-	//MyClass();
-	//~MyClass();
+	Junk2DSprite();
+	~Junk2DSprite();
+
+	void drawSprite();
 
 private:
-
+	Graphics *g;
+	const char *file;
+	float x, y;
+	float width, height;
 };
-/*
-MyClass::MyClass()
-{
-}
 
-MyClass::~MyClass()
-{
-}
-*/
 #endif
