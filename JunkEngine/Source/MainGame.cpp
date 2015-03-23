@@ -15,18 +15,7 @@ void MainGame::initialize(HWND hwnd)
 {
     Game::initialize(hwnd);
 
-	// 배경 텍스쳐
-	if (!BGTexture.initialize(graphics, "..\\Resources\\bg.png")) {
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg texture"));
-	}
-
-	// 배경 이미지
-	if (!BG.initialize(graphics, 0, 0, 0, &BGTexture)) {
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg"));
-	}
-
-	BG.setX(GAME_WIDTH*0.5f - BG.getWidth()*0.5f);
-	BG.setY(GAME_HEIGHT*0.5f - BG.getHeight()*0.5f);
+	BackGround.settingTexture(graphics,"..\\Resources\\bg.png");
 
     return;
 }
@@ -57,7 +46,7 @@ void MainGame::render()
 {
 	graphics->spriteBegin();
 
-	BG.draw();
+	BackGround.draw();
 
 	graphics->spriteEnd();
 }
@@ -65,7 +54,7 @@ void MainGame::render()
 // 예약된 비디오 메모리 해제
 void MainGame::releaseAll()
 {
-	BGTexture.onLostDevice();
+	BackGround.onLostDevice();
 
     Game::releaseAll();
     return;
@@ -74,7 +63,7 @@ void MainGame::releaseAll()
 // 그래픽 디바이스 리셋
 void MainGame::resetAll()
 {
-	BGTexture.onResetDevice();
+	BackGround.onResetDevice();
 
     Game::resetAll();
     return;

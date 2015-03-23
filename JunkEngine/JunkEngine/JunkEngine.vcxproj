@@ -72,6 +72,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Headers\Junk2DSprite.cpp" />
     <ClCompile Include="..\Source\game.cpp" />
     <ClCompile Include="..\Source\graphics.cpp" />
     <ClCompile Include="..\Source\image.cpp" />

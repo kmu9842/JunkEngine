@@ -5,7 +5,7 @@
 #include "textureManager.h"
 #include "constants.h"
 
-class Image
+class Image 
 {
     // Image 설정
   protected:
@@ -131,7 +131,7 @@ class Image
     virtual void flipVertical(bool flip)    {spriteData.flipVertical = flip;}
 
     // 함수 프로토타입, 기본 색상은 흰색
-    virtual void draw(COLOR_ARGB color = graphicsNS::WHITE);
+	virtual void draw(COLOR_ARGB color = graphicsNS::WHITE);
 
     // 스프라이트 데이터에 값이 들어올 경우 해당 함수 호출,
 	//	스프라이트 데이터를 이용해 그림
