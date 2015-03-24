@@ -13,6 +13,9 @@ private:
 	// 게임 요소들
 	Junk2DSprite BackGround;
 
+	TextureManager runnerTexture;
+	Image runner;
+
 	
     // 변수
 	bool vibrate = true;

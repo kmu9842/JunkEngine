@@ -16,6 +16,20 @@ void MainGame::initialize(HWND hwnd)
     Game::initialize(hwnd);
 
 	BackGround.settingTexture(graphics,"..\\Resources\\bg.png");
+	if (!runnerTexture.initialize(graphics, "..\\Resources\\spritesheet.png")) {
+		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg texture"));
+	}
+	if (!runner.initialize(graphics, 240, 210, 2, &runnerTexture)) {
+		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg"));
+	}
+
+	runner.setX(GAME_WIDTH/4);
+	runner.setY(GAME_HEIGHT / 4);
+
+	runner.setFrames(0,3);
+	runner.setCurrentFrame(0);
+	runner.setFrameDelay(0.1f);
+	runner.setDegrees(0);
 
     return;
 }
@@ -31,6 +45,8 @@ void MainGame::update()
 		input->gamePadVibrateRight(0, 65535, 1.0);
 		vibrate = true;
 	}
+
+	runner.update(frameTime);
 }
 
 // AI
@@ -47,6 +63,7 @@ void MainGame::render()
 	graphics->spriteBegin();
 
 	BackGround.draw();
+	runner.draw();
 
 	graphics->spriteEnd();
 }

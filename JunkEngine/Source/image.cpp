@@ -117,33 +117,34 @@ void Image::draw(SpriteData sd, COLOR_ARGB color)
 
 //=============================================================================
 // update
-// typically called once per frame
-// frameTime is used to regulate the speed of movement and animation
+// 일반적으로 프레임당 1번 호출
+// frameTime은 이동이나 애니메이션의 속도를 조절하는데 사용
 //=============================================================================
 void Image::update(float frameTime)
 {
-	if (endFrame - startFrame > 0)          // if animated sprite
+	if (endFrame - startFrame > 0)          // 애니메이션 동작이 있는 스프라이트 일 경우
 	{
-		animTimer += frameTime;             // total elapsed time
+		animTimer += frameTime;             // 전체 경과 시간 추가
 		if (animTimer > frameDelay)
 		{
 			animTimer -= frameDelay;
 			currentFrame++;
 			if (currentFrame < startFrame || currentFrame > endFrame)
 			{
-				if (loop == true)            // if looping animation
+				if (loop == true)            // 반복하는 애니메이션일 경우
 					currentFrame = startFrame;
-				else                        // not looping animation
+				else                         // 반복하지 않는 애니메이션일 경우
 				{
 					currentFrame = endFrame;
-					animComplete = true;    // animation complete
+					animComplete = true;     // 애니메이션 완료
 				}
 			}
-			setRect();                      // set spriteData.rect
+			setRect();                       // spriteData.rect 다시 설정
 		}
 	}
 }
 
+// 이미지의 현재 프레임 설정
 void Image::setCurrentFrame(int c) 
 {
     if(c >= 0)
@@ -154,9 +155,10 @@ void Image::setCurrentFrame(int c)
     }
 }
 
+// currentFrame에 그리기 위하여 spriteData.rect를 설정
 inline void Image::setRect() 
 {
-    // configure spriteData.rect to draw currentFrame
+    // currentFrame에 그리기 위하여 spriteData.rect를 설정
     spriteData.rect.left = (currentFrame % cols) * spriteData.width;
     // right edge + 1
     spriteData.rect.right = spriteData.rect.left + spriteData.width;
