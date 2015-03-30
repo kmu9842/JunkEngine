@@ -46,7 +46,39 @@ void MainGame::update()
 		vibrate = true;
 	}
 
-	runner.update(frameTime);
+	
+
+	if (input->isKeyDown(VK_RIGHT)) {
+		runner.setX(runner.getX() + frameTime * 80.0f);
+		if (runner.getX() > GAME_WIDTH) {
+			runner.setX((float)-runner.getWidth());
+		}
+		runner.update(frameTime);
+	}
+
+	if (input->isKeyDown(VK_LEFT)) {
+		runner.setX(runner.getX() - frameTime * 80.0f);
+		if (runner.getX() < -runner.getWidth()) {
+			runner.setX((float)GAME_WIDTH);
+		}
+		runner.update(frameTime);
+	}
+
+	if (input->isKeyDown(VK_UP)) {
+		runner.setY(runner.getY() - frameTime * 80.0f);
+		if (runner.getY() < -runner.getHeight()) {
+			runner.setY((float)GAME_HEIGHT);
+		}
+		runner.update(frameTime);
+	}
+
+	if (input->isKeyDown(VK_DOWN)) {
+		runner.setY(runner.getY() + frameTime * 80.0f);
+		if (runner.getY() > GAME_HEIGHT) {
+			runner.setY((float)-runner.getHeight());
+		}
+		runner.update(frameTime);
+	}
 }
 
 // AI
