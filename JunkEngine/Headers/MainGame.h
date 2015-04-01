@@ -12,9 +12,7 @@ class MainGame : public Game
 private:
 	// 게임 요소들
 	Junk2DSprite BackGround;
-
-	TextureManager runnerTexture;
-	Image runner;
+	Junk2DSprite runner;
 
 	
     // 변수

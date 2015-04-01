@@ -16,19 +16,10 @@ void MainGame::initialize(HWND hwnd)
     Game::initialize(hwnd);
 
 	BackGround.settingTexture(graphics,"..\\Resources\\bg.png");
-	if (!runnerTexture.initialize(graphics, "..\\Resources\\spritesheet.png")) {
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg texture"));
-	}
-	if (!runner.initialize(graphics, 240, 210, 2, &runnerTexture)) {
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg"));
-	}
 
-	runner.setX(GAME_WIDTH/4);
-	runner.setY(GAME_HEIGHT / 4);
-
-	runner.setFrames(0,3);
-	runner.setCurrentFrame(0);
-	runner.setFrameDelay(0.1f);
+	runner.settingTexture(graphics, "..\\Resources\\spritesheet.png",240,210,2);
+	runner.setScale(GAME_WIDTH / 4, GAME_HEIGHT / 4);
+	runner.setAnimation(0,3,0,0.1f);
 	runner.setDegrees(0);
 
     return;
@@ -46,7 +37,7 @@ void MainGame::update()
 		vibrate = true;
 	}
 
-	
+	runner.Play(frameTime);
 
 	if (input->isKeyDown(VK_RIGHT)) {
 		runner.setX(runner.getX() + frameTime * 80.0f);

@@ -1,4 +1,4 @@
-﻿빌드 시작: 2015-03-30 오후 4:18:22
+﻿빌드 시작: 2015-04-01 오후 2:53:11
      1>2 노드의 "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" 프로젝트(Build 대상)입니다.
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\MainGame.cpp
@@ -19,7 +19,9 @@
          c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
      1>c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(30): warning C4458: 'file' 선언은 클래스 멤버를 숨깁니다.
          c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(15): note: 'TextureManager::file' 선언을 참조하십시오.
-     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\MainGame.h(28): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\Junk2DSprite.h(21): warning C4458: 'currentFrame' 선언은 클래스 멤버를 숨깁니다.
+         c:\users\min\documents\github\junkengine\junkengine\headers\image.h(20): note: 'Image::currentFrame' 선언을 참조하십시오.
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\MainGame.h(26): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
          c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
      1>..\Source\MainGame.cpp(14): warning C4458: 'hwnd' 선언은 클래스 멤버를 숨깁니다.
          c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: 'Game::hwnd' 선언을 참조하십시오.
@@ -39,4 +41,4 @@
 
 빌드했습니다.
 
-경과 시간: 00:00:01.61
+경과 시간: 00:00:01.51
