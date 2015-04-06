@@ -41,6 +41,12 @@ void Junk2DSprite::settingTexture(Graphics *g, const char *filename, int width, 
 
 void Junk2DSprite::setScale(int x, int y)
 {
+	//Image.setX(x);
+	//Image.setY(y);
+}
+
+void Junk2DSprite::setXY(int x, int y)
+{
 	Image.setX(x);
 	Image.setY(y);
 }

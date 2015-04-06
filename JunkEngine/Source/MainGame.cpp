@@ -20,7 +20,7 @@ void MainGame::initialize(HWND hwnd)
 	runner.settingTexture(graphics, "..\\Resources\\spritesheet.png",240,210,2);
 	runner.setScale(GAME_WIDTH / 4, GAME_HEIGHT / 4);
 	runner.setAnimation(0,3,0,0.1f);
-	runner.setDegrees(0);
+	//runner.setDegrees(0);
 
     return;
 }
@@ -37,16 +37,16 @@ void MainGame::update()
 		vibrate = true;
 	}
 
-	runner.Play(frameTime);
+	//runner.Play(frameTime);
 
 	if (input->isKeyDown(VK_RIGHT)) {
-		runner.setX(runner.getX() + frameTime * 80.0f);
+		runner.setXY(runner.getX() + frameTime * 80.0f,runner.getY());
 		if (runner.getX() > GAME_WIDTH) {
-			runner.setX((float)-runner.getWidth());
+			runner.setXY((float)-runner.getWidth() + frameTime * 80.0f, runner.getY());
 		}
-		runner.update(frameTime);
+		runner.Play(frameTime);
 	}
-
+	/*
 	if (input->isKeyDown(VK_LEFT)) {
 		runner.setX(runner.getX() - frameTime * 80.0f);
 		if (runner.getX() < -runner.getWidth()) {
@@ -69,7 +69,7 @@ void MainGame::update()
 			runner.setY((float)-runner.getHeight());
 		}
 		runner.update(frameTime);
-	}
+	}*/
 }
 
 // AI
