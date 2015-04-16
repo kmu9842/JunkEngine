@@ -1,3 +1,4 @@
+/*
 #include "Junk2DSprite.h"
 
 Junk2DSprite::Junk2DSprite()
@@ -71,3 +72,4 @@ void Junk2DSprite::onResetDevice() {
 	Texture.onResetDevice();
 }
 
+*/

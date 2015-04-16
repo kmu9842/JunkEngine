@@ -1,3 +1,4 @@
+/*
 #ifndef _JUNK2DSPRITE_H             
 #define _JUNK2DSPRITE_H           
 #define WIN32_LEAN_AND_MEAN
@@ -36,4 +37,4 @@ private:
 	float width, height;
 };
 
-#endif
+#endif*/

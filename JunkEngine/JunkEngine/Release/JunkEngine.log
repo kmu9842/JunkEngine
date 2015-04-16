@@ -1,24 +1,135 @@
-﻿Build started 2015-04-14 오후 2:52:10.
+﻿Build started 2015-04-16 오전 10:23:09.
      1>Project "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Headers\Junk2DSprite.cpp ..\Source\MainGame.cpp ..\Source\game.cpp ..\Source\graphics.cpp ..\Source\image.cpp ..\Source\input.cpp ..\Source\textureManager.cpp ..\Source\winmain.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Headers\Junk2DSprite.cpp ..\Source\game.cpp ..\Source\graphics.cpp ..\Source\image.cpp ..\Source\input.cpp ..\Source\MainGame.cpp ..\Source\textureManager.cpp ..\Source\winmain.cpp
          Junk2DSprite.cpp
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(9): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
-         MainGame.cpp
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(9): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
          game.cpp
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(9): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'fullscreen' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(81): note: see declaration of 'Graphics::fullscreen'
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(36): warning C4458: declaration of 'hwnd' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(18): note: see declaration of 'Game::hwnd'
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(39): warning C4458: declaration of 'hwnd' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(18): note: see declaration of 'Game::hwnd'
+     1>..\Source\game.cpp(17): warning C4458: declaration of 'hwnd' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(18): note: see declaration of 'Game::hwnd'
+     1>..\Source\game.cpp(135): warning C4458: declaration of 'hwnd' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\game.h(18): note: see declaration of 'Game::hwnd'
          graphics.cpp
-     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(9): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(97): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(97): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(103): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(103): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(103): warning C4458: declaration of 'fullscreen' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(81): note: see declaration of 'Graphics::fullscreen'
+     1>..\Source\graphics.cpp(153): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>..\Source\graphics.cpp(153): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\graphics.h(83): note: see declaration of 'Graphics::height'
          image.cpp
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(9): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'fullscreen' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(81): note: see declaration of 'Graphics::fullscreen'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(30): warning C4458: declaration of 'file' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(15): note: see declaration of 'TextureManager::file'
+     1>..\Source\image.cpp(159): error C2039: 'settingTexture': is not a member of 'Junk2DSprite'
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\Image.h(9): note: see declaration of 'Junk2DSprite'
+     1>..\Source\image.cpp(162): error C2065: 'textureManager': undeclared identifier
+     1>..\Source\image.cpp(162): error C2228: left of '.initialize' must have class/struct/union
+         ..\Source\image.cpp(162): note: type is 'unknown-type'
+     1>..\Source\image.cpp(162): error C2065: 'g': undeclared identifier
+     1>..\Source\image.cpp(167): error C2065: 'Image': undeclared identifier
+     1>..\Source\image.cpp(167): error C2228: left of '.initialize' must have class/struct/union
+         ..\Source\image.cpp(167): note: type is 'unknown-type'
+     1>..\Source\image.cpp(167): error C2065: 'g': undeclared identifier
+     1>..\Source\image.cpp(167): error C2065: 'Texture': undeclared identifier
          input.cpp
+         MainGame.cpp
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'fullscreen' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(81): note: see declaration of 'Graphics::fullscreen'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(36): warning C4458: declaration of 'hwnd' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(39): warning C4458: declaration of 'hwnd' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(30): warning C4458: declaration of 'file' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(15): note: see declaration of 'TextureManager::file'
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\MainGame.h(25): warning C4458: declaration of 'hwnd' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
+     1>..\Source\MainGame.cpp(14): warning C4458: declaration of 'hwnd' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
+     1>..\Source\MainGame.cpp(18): error C2039: 'settingTexture': is not a member of 'Junk2DSprite'
+         c:\users\min\documents\github\junkengine\junkengine\headers\Image.h(9): note: see declaration of 'Junk2DSprite'
+     1>..\Source\MainGame.cpp(20): error C2039: 'settingTexture': is not a member of 'Junk2DSprite'
+         c:\users\min\documents\github\junkengine\junkengine\headers\Image.h(9): note: see declaration of 'Junk2DSprite'
+     1>..\Source\MainGame.cpp(21): error C2660: 'Junk2DSprite::setScale': function does not take 2 arguments
+     1>..\Source\MainGame.cpp(22): error C2039: 'setAnimation': is not a member of 'Junk2DSprite'
+         c:\users\min\documents\github\junkengine\junkengine\headers\Image.h(9): note: see declaration of 'Junk2DSprite'
+     1>..\Source\MainGame.cpp(47): error C2039: 'Play': is not a member of 'Junk2DSprite'
+         c:\users\min\documents\github\junkengine\junkengine\headers\Image.h(9): note: see declaration of 'Junk2DSprite'
+     1>..\Source\MainGame.cpp(97): error C2039: 'onLostDevice': is not a member of 'Junk2DSprite'
+         c:\users\min\documents\github\junkengine\junkengine\headers\Image.h(9): note: see declaration of 'Junk2DSprite'
+     1>..\Source\MainGame.cpp(106): error C2039: 'onResetDevice': is not a member of 'Junk2DSprite'
+         c:\users\min\documents\github\junkengine\junkengine\headers\Image.h(9): note: see declaration of 'Junk2DSprite'
          textureManager.cpp
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(9): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'fullscreen' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(81): note: see declaration of 'Graphics::fullscreen'
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\textureManager.h(30): warning C4458: declaration of 'file' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\textureManager.h(15): note: see declaration of 'TextureManager::file'
          winmain.cpp
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(9): fatal error C1083: Cannot open include file: 'd3dx9.h': No such file or directory
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'width' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'height' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'fullscreen' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(81): note: see declaration of 'Graphics::fullscreen'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(36): warning C4458: declaration of 'hwnd' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(39): warning C4458: declaration of 'hwnd' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
+     1>c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(30): warning C4458: declaration of 'file' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(15): note: see declaration of 'TextureManager::file'
+     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\MainGame.h(25): warning C4458: declaration of 'hwnd' hides class member
+         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
      1>Done Building Project "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:03.14
+Time Elapsed 00:00:04.98

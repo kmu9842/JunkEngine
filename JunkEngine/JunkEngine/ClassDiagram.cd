@@ -24,9 +24,6 @@
       <HashCode>AAAAAAAAQAABABAAAAGgAAAAAAAAAABIIAAAAAAUAAA=</HashCode>
       <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\MainGame.h</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="BackGround" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Input" Collapsed="true">
     <Position X="0.5" Y="0.5" Width="1.5" />
@@ -35,15 +32,15 @@
       <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\input.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Image" Collapsed="true">
-    <Position X="5.5" Y="2.5" Width="1.5" />
+  <Class Name="Junk2DSprite" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
     <AssociationLine Name="textureManager" Type="TextureManager">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-0.65" Y="0.341" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>cAAQAYhAgDAELgEAACM+AIIACACpwBsCAACATmQEAgQ=</HashCode>
+      <HashCode>cAAQAZhAgDAELgEAACM+AIIACACpwAkCAQCATmQEAgQ=</HashCode>
       <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\image.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -52,35 +49,14 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="TextureManager" Collapsed="true">
-    <Position X="5.5" Y="3.5" Width="1.5" />
+    <Position X="2.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAABAAAgQARIEAAAAABAABQggABAAAAAAAAEA=</HashCode>
       <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\textureManager.h</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Junk2DSprite" Collapsed="true">
-    <Position X="2.75" Y="2.5" Width="1.5" />
-    <AssociationLine Name="Texture" Type="TextureManager">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.912" Y="-0.294" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <AssociationLine Name="Image" Type="Image">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.06" Y="-0.453" />
-      </MemberNameLabel>
-    </AssociationLine>
-    <TypeIdentifier>
-      <HashCode>ECgAABAAAAAAAAQAQIIAAAAAAAAAABAKhAIgAGAAAEA=</HashCode>
-      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\Junk2DSprite.h</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="Texture" />
-      <Field Name="Image" />
-    </ShowAsAssociation>
-  </Class>
   <Struct Name="SpriteData" Collapsed="true">
-    <Position X="8" Y="2.5" Width="1.5" />
+    <Position X="5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAAQAQAAAIAICAAAAAgAAAABgAABAAAA=</HashCode>
       <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\graphics.h</FileName>

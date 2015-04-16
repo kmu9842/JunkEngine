@@ -7,22 +7,22 @@ MainGame::MainGame()
 // 소멸자
 MainGame::~MainGame()
 {
-    releaseAll();           
+	releaseAll();
 }
 
 // 게임 초기화
 void MainGame::initialize(HWND hwnd)
 {
-    Game::initialize(hwnd);
+	Game::initialize(hwnd);
 
-	BackGround.settingTexture(graphics,"..\\Resources\\bg.png");
+	BackGround.settingTexture(graphics, "..\\Resources\\bg.png");
 
-	runner.settingTexture(graphics, "..\\Resources\\spritesheet.png",240,210,2);
+	runner.settingTexture(graphics, "..\\Resources\\spritesheet.png", 240, 210, 2);
 	runner.setScale(GAME_WIDTH / 4, GAME_HEIGHT / 4);
-	runner.setAnimation(0,3,0,0.1f);
+	runner.setAnimation(0, 3, 0, 0.1f);
 	//runner.setDegrees(0);
 
-    return;
+	return;
 }
 
 // 게임 루프 메세지
@@ -40,35 +40,35 @@ void MainGame::update()
 	//runner.Play(frameTime);
 
 	if (input->isKeyDown(VK_RIGHT)) {
-		runner.setXY(runner.getX() + frameTime * 80.0f,runner.getY());
+		runner.setX(runner.getX() + frameTime * 80.0f);
 		if (runner.getX() > GAME_WIDTH) {
-			runner.setXY((float)-runner.getWidth() + frameTime * 80.0f, runner.getY());
+			runner.setX((float)-runner.getWidth() + frameTime * 80.0f);
 		}
 		runner.Play(frameTime);
 	}
 	/*
 	if (input->isKeyDown(VK_LEFT)) {
-		runner.setX(runner.getX() - frameTime * 80.0f);
-		if (runner.getX() < -runner.getWidth()) {
-			runner.setX((float)GAME_WIDTH);
-		}
-		runner.update(frameTime);
+	runner.setX(runner.getX() - frameTime * 80.0f);
+	if (runner.getX() < -runner.getWidth()) {
+	runner.setX((float)GAME_WIDTH);
+	}
+	runner.update(frameTime);
 	}
 
 	if (input->isKeyDown(VK_UP)) {
-		runner.setY(runner.getY() - frameTime * 80.0f);
-		if (runner.getY() < -runner.getHeight()) {
-			runner.setY((float)GAME_HEIGHT);
-		}
-		runner.update(frameTime);
+	runner.setY(runner.getY() - frameTime * 80.0f);
+	if (runner.getY() < -runner.getHeight()) {
+	runner.setY((float)GAME_HEIGHT);
+	}
+	runner.update(frameTime);
 	}
 
 	if (input->isKeyDown(VK_DOWN)) {
-		runner.setY(runner.getY() + frameTime * 80.0f);
-		if (runner.getY() > GAME_HEIGHT) {
-			runner.setY((float)-runner.getHeight());
-		}
-		runner.update(frameTime);
+	runner.setY(runner.getY() + frameTime * 80.0f);
+	if (runner.getY() > GAME_HEIGHT) {
+	runner.setY((float)-runner.getHeight());
+	}
+	runner.update(frameTime);
 	}*/
 }
 
@@ -96,8 +96,8 @@ void MainGame::releaseAll()
 {
 	BackGround.onLostDevice();
 
-    Game::releaseAll();
-    return;
+	Game::releaseAll();
+	return;
 }
 
 // 그래픽 디바이스 리셋
@@ -105,6 +105,6 @@ void MainGame::resetAll()
 {
 	BackGround.onResetDevice();
 
-    Game::resetAll();
-    return;
+	Game::resetAll();
+	return;
 }
