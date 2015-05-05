@@ -15,11 +15,12 @@ void MainGame::initialize(HWND hwnd)
 {
 	Game::initialize(hwnd);
 
+	
 	BackGround.settingTexture(graphics, "..\\Resources\\bg.png");
-
+	/*
 	runner.settingTexture(graphics, "..\\Resources\\spritesheet.png", 240, 210, 2);
 	runner.setScale(GAME_WIDTH / 4, GAME_HEIGHT / 4);
-	runner.setAnimation(0, 3, 0, 0.1f);
+	runner.setAnimation(0, 3, 0, 0.1f);*/
 	//runner.setDegrees(0);
 
 	return;
@@ -28,23 +29,23 @@ void MainGame::initialize(HWND hwnd)
 // 게임 루프 메세지
 void MainGame::update()
 {
-	if (vibrate) {
+	/*if (vibrate) {
 		input->gamePadVibrateLeft(0, 65535, 1.0);
 		vibrate = false;
 	}
 	if (!vibrate) {
 		input->gamePadVibrateRight(0, 65535, 1.0);
 		vibrate = true;
-	}
+	}*/
 
 	//runner.Play(frameTime);
-
+	/*
 	if (input->isKeyDown(VK_RIGHT)) {
 		runner.setX(runner.getX() + frameTime * 80.0f);
 		if (runner.getX() > GAME_WIDTH) {
 			runner.setX((float)-runner.getWidth() + frameTime * 80.0f);
 		}
-		runner.Play(frameTime);
+		//runner.Play(frameTime);
 	}
 	/*
 	if (input->isKeyDown(VK_LEFT)) {
@@ -86,7 +87,7 @@ void MainGame::render()
 	graphics->spriteBegin();
 
 	BackGround.draw();
-	runner.draw();
+	//runner.draw();
 
 	graphics->spriteEnd();
 }

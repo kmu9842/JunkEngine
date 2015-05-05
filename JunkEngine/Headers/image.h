@@ -11,6 +11,7 @@ class Junk2DSprite
 protected:
 	Graphics *graphics;     // graphics 객체를 가리키는 포인터
 	TextureManager *textureManager; // texture manager 객체를 가리키는 포인터
+	TextureManager texture;
 
 	SpriteData spriteData;  // Graphics::drawSprite() 함수가 요구하는 데이터를 포함한 구조체
 	COLOR_ARGB colorFilter; // 스프라이트를 그릴 때 필터로 적용할 색상. 아무런 변화가 없을경우 WHITE지정
@@ -143,7 +144,10 @@ public:
 
 	virtual void update(float frameTime);
 
-	virtual void settingTexture(const char *filename);
+	virtual void settingTexture(Graphics *g, const char *filename);
+
+	virtual void onLostDevice() { textureManager->onLostDevice(); };
+	virtual void onResetDevice() { textureManager->onResetDevice(); };
 };
 
 #endif

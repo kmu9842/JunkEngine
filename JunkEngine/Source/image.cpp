@@ -156,15 +156,15 @@ void Junk2DSprite::setCurrentFrame(int c)
 }
 
 // 텍스쳐 설정, 초기화
-void Junk2DSprite::settingTexture(const char *filename)
+void Junk2DSprite::settingTexture(Graphics *g, const char *filename)
 {
 	// 배경 텍스쳐
-	if (!textureManager.initialize(g, filename)) {
+	if (!texture.initialize(g, filename)) {
 		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg texture"));
 	}
 
 	// 배경 이미지
-	if (!this.initialize(g, 0, 0, 0, &Texture)) {
+	if (!this->initialize(g, 0, 0, 0, &texture)) {
 		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg"));
 	}
 }
@@ -180,4 +180,5 @@ inline void Junk2DSprite::setRect()
 	// bottom edge + 1
 	spriteData.rect.bottom = spriteData.rect.top + spriteData.height;
 }
+
 
