@@ -12,7 +12,6 @@ private:
 	// 게임 요소들
 	Junk2DSprite BackGround;
 	Junk2DSprite runner;
-
 	
     // 변수
 	bool vibrate = true;

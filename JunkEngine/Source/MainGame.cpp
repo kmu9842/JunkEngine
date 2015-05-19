@@ -17,11 +17,11 @@ void MainGame::initialize(HWND hwnd)
 
 	
 	BackGround.settingTexture(graphics, "..\\Resources\\bg.png");
-	/*
+	
 	runner.settingTexture(graphics, "..\\Resources\\spritesheet.png", 240, 210, 2);
-	runner.setScale(GAME_WIDTH / 4, GAME_HEIGHT / 4);
-	runner.setAnimation(0, 3, 0, 0.1f);*/
-	//runner.setDegrees(0);
+	runner.setScaleXY(GAME_WIDTH / 4, GAME_HEIGHT / 4);
+	runner.setAnimation(0, 3, 0, 0.1f);
+	runner.setDegrees(0);
 
 	return;
 }
@@ -39,38 +39,38 @@ void MainGame::update()
 	}*/
 
 	//runner.Play(frameTime);
-	/*
+	
 	if (input->isKeyDown(VK_RIGHT)) {
 		runner.setX(runner.getX() + frameTime * 80.0f);
 		if (runner.getX() > GAME_WIDTH) {
 			runner.setX((float)-runner.getWidth() + frameTime * 80.0f);
 		}
-		//runner.Play(frameTime);
+		runner.update(frameTime);
 	}
-	/*
+	
 	if (input->isKeyDown(VK_LEFT)) {
-	runner.setX(runner.getX() - frameTime * 80.0f);
-	if (runner.getX() < -runner.getWidth()) {
-	runner.setX((float)GAME_WIDTH);
-	}
-	runner.update(frameTime);
+		runner.setX(runner.getX() - frameTime * 80.0f);
+		if (runner.getX() < -runner.getWidth()) {
+			runner.setX((float)GAME_WIDTH);
+		}
+		runner.update(frameTime);
 	}
 
 	if (input->isKeyDown(VK_UP)) {
-	runner.setY(runner.getY() - frameTime * 80.0f);
-	if (runner.getY() < -runner.getHeight()) {
-	runner.setY((float)GAME_HEIGHT);
-	}
-	runner.update(frameTime);
+		runner.setY(runner.getY() - frameTime * 80.0f);
+		if (runner.getY() < -runner.getHeight()) {
+			runner.setY((float)GAME_HEIGHT);
+		}
+		runner.update(frameTime);
 	}
 
 	if (input->isKeyDown(VK_DOWN)) {
-	runner.setY(runner.getY() + frameTime * 80.0f);
-	if (runner.getY() > GAME_HEIGHT) {
-	runner.setY((float)-runner.getHeight());
+		runner.setY(runner.getY() + frameTime * 80.0f);
+		if (runner.getY() > GAME_HEIGHT) {
+			runner.setY((float)-runner.getHeight());
+		}
+		runner.update(frameTime);
 	}
-	runner.update(frameTime);
-	}*/
 }
 
 // AI
@@ -87,7 +87,7 @@ void MainGame::render()
 	graphics->spriteBegin();
 
 	BackGround.draw();
-	//runner.draw();
+	runner.draw();
 
 	graphics->spriteEnd();
 }

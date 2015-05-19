@@ -1,60 +1,8 @@
-﻿Build started 2015-05-05 오후 11:09:46.
-     1>Project "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" on node 2 (Build target(s)).
+﻿빌드 시작: 2015-05-19 오후 6:51:10
+     1>2 노드의 "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" 프로젝트(Build 대상)입니다.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\MainGame.cpp ..\Source\image.cpp ..\Source\winmain.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\MainGame.cpp
          MainGame.cpp
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'width' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'height' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'width' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'height' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'fullscreen' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(81): note: see declaration of 'Graphics::fullscreen'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(36): warning C4458: declaration of 'hwnd' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(39): warning C4458: declaration of 'hwnd' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(30): warning C4458: declaration of 'file' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(15): note: see declaration of 'TextureManager::file'
-     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\MainGame.h(25): warning C4458: declaration of 'hwnd' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
-     1>..\Source\MainGame.cpp(14): warning C4458: declaration of 'hwnd' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
-         image.cpp
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'width' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'height' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'width' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'height' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'fullscreen' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(81): note: see declaration of 'Graphics::fullscreen'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(30): warning C4458: declaration of 'file' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(15): note: see declaration of 'TextureManager::file'
-         winmain.cpp
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'width' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(97): warning C4458: declaration of 'height' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'width' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(82): note: see declaration of 'Graphics::width'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'height' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(83): note: see declaration of 'Graphics::height'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(103): warning C4458: declaration of 'fullscreen' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\graphics.h(81): note: see declaration of 'Graphics::fullscreen'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(36): warning C4458: declaration of 'hwnd' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\game.h(39): warning C4458: declaration of 'hwnd' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
-     1>c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(30): warning C4458: declaration of 'file' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\textureManager.h(15): note: see declaration of 'TextureManager::file'
-     1>c:\users\min\documents\github\junkengine\junkengine\source\..\\Headers\\MainGame.h(25): warning C4458: declaration of 'hwnd' hides class member
-         c:\users\min\documents\github\junkengine\junkengine\headers\game.h(18): note: see declaration of 'Game::hwnd'
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.exe" /NOLOGO XInput.lib d3d9.lib d3dx9.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.lib" /MACHINE:X86 /SAFESEH Release\Junk2DSprite.obj
          Release\game.obj
@@ -64,11 +12,11 @@
          Release\MainGame.obj
          Release\textureManager.obj
          Release\winmain.obj
-         Generating code
-         Finished generating code
+         코드를 생성하고 있습니다.
+         코드를 생성했습니다.
          JunkEngine.vcxproj -> C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.exe
-     1>Done Building Project "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" (Build target(s)).
+     1>"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
 
-Build succeeded.
+빌드했습니다.
 
-Time Elapsed 00:00:11.00
+경과 시간: 00:00:01.45

@@ -85,6 +85,7 @@ public:
 	// X Y 위치 동시 설정
 	virtual void setY(float newX, float newY) { spriteData.x = newX;  spriteData.y = newY; }
 	// 크기 설정
+	virtual void setScaleXY(float x, float y) { spriteData.x = x; spriteData.y = y; }
 	virtual void setScale(float s) { spriteData.scale = s; }
 
 	// 회전각도를 도 단위로 설정한다. 0도는 위쪽, 각도는 시계 방향으로 움직임.
@@ -138,6 +139,8 @@ public:
 	// 함수 프로토타입, 기본 색상은 흰색
 	virtual void draw(COLOR_ARGB color = graphicsNS::WHITE);
 
+	virtual void setAnimation(float FrameStart, int FrameEnd, int currentFrame, float FrameDelay);
+
 	// 스프라이트 데이터에 값이 들어올 경우 해당 함수 호출,
 	//	스프라이트 데이터를 이용해 그림
 	virtual void draw(SpriteData sd, COLOR_ARGB color = graphicsNS::WHITE);
@@ -145,6 +148,7 @@ public:
 	virtual void update(float frameTime);
 
 	virtual void settingTexture(Graphics *g, const char *filename);
+	virtual void settingTexture(Graphics *g, const char *filename, int width, int height, int nCols);
 
 	virtual void onLostDevice() { textureManager->onLostDevice(); };
 	virtual void onResetDevice() { textureManager->onResetDevice(); };

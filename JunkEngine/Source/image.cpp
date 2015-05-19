@@ -169,6 +169,26 @@ void Junk2DSprite::settingTexture(Graphics *g, const char *filename)
 	}
 }
 
+void Junk2DSprite::settingTexture(Graphics * g, const char * filename, int width, int height, int nCols)
+{
+	// 배경 텍스쳐
+	if (!texture.initialize(g, filename)) {
+		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg texture"));
+	}
+
+	// 배경 이미지
+	if (!this->initialize(g, width, height, nCols, &texture)) {
+		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg"));
+	}
+}
+
+void Junk2DSprite::setAnimation(float FrameStart, int FrameEnd, int currentFrame, float FrameDelay)
+{
+	this->setFrames(FrameStart, FrameEnd);
+	this->setCurrentFrame(currentFrame);
+	this->setFrameDelay(FrameDelay);
+}
+
 // currentFrame에 그리기 위하여 spriteData.rect를 설정
 inline void Junk2DSprite::setRect()
 {
