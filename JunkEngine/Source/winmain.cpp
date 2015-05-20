@@ -1,4 +1,5 @@
 #define _CRTDBG_MAP_ALLOC       // for detecting memory leaks
+#define _CRT_SECURE_NO_WARNINGS
 #define WIN32_LEAN_AND_MEAN
 
 #include <Windows.h>
@@ -38,6 +39,10 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
         // 메인 메세지 루프
         int done = 0;
+
+		AllocConsole();
+		freopen("CONOUT$", "wb", stdout);
+
         while (!done)
         {
             if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) // 윈도우 메세지 확인
@@ -47,8 +52,7 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
                 TranslateMessage(&msg); // WinProc에 메세지 전달
                 DispatchMessage(&msg);
-            } else
-                game->run(hwnd);    // 게임 루프 실행
+            } else game->run(hwnd);    // 게임 루프 실행
         }
         SAFE_DELETE (game);     // 종료전 메모리를 비워줌
         return msg.wParam;

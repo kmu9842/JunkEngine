@@ -19,7 +19,7 @@ void MainGame::initialize(HWND hwnd)
 	BackGround.settingTexture(graphics, "..\\Resources\\bg.png");
 	
 	runner.settingTexture(graphics, "..\\Resources\\spritesheet.png", 240, 210, 2);
-	runner.setScaleXY(GAME_WIDTH / 4, GAME_HEIGHT / 4);
+	runner.setXY(GAME_WIDTH / 4, GAME_HEIGHT / 4);
 	runner.setAnimation(0, 3, 0, 0.1f);
 	runner.setDegrees(0);
 
@@ -87,7 +87,10 @@ void MainGame::render()
 	graphics->spriteBegin();
 
 	BackGround.draw();
+
+	//for (int i = 0; i < 1000;i++) {
 	runner.draw();
+	//}
 
 	graphics->spriteEnd();
 }

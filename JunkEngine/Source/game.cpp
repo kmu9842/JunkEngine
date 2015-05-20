@@ -171,6 +171,9 @@ void Game::run(HWND hwnd)
     input->readControllers();       // 컨트롤러의 상태 읽기
 
     input->clear(inputNS::KEYS_PRESSED); // 입력된것 초기화
+
+	system("CLS");
+	printf("%.1f\n", fps);
 }
 
 void Game::releaseAll()

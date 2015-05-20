@@ -83,9 +83,8 @@ public:
 	// Y 위치 설정
 	virtual void setY(float newY) { spriteData.y = newY; }
 	// X Y 위치 동시 설정
-	virtual void setY(float newX, float newY) { spriteData.x = newX;  spriteData.y = newY; }
+	virtual void setXY(float newX, float newY) { spriteData.x = newX;  spriteData.y = newY; }
 	// 크기 설정
-	virtual void setScaleXY(float x, float y) { spriteData.x = x; spriteData.y = y; }
 	virtual void setScale(float s) { spriteData.scale = s; }
 
 	// 회전각도를 도 단위로 설정한다. 0도는 위쪽, 각도는 시계 방향으로 움직임.
