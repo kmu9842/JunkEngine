@@ -15,6 +15,7 @@
 #define LP_3D       LPDIRECT3D9
 #define LP_SPRITE	LPD3DXSPRITE
 #define LP_TEXTURE  LPDIRECT3DTEXTURE9  // 
+#define VECTOR2		D3DXVECTOR2
 
 // 색상 정의
 #define COLOR_ARGB DWORD
@@ -65,68 +66,68 @@ struct SpriteData
 	bool		flipVertical;	// true일 경우 스프라이트를 수직으로 뒤집음
 };
 
-class Graphics 
+class Graphics
 {
 private:
-    // DirectX 포인터
-    LP_3D       direct3d;
-    LP_3DDEVICE device3d;
+	// DirectX 포인터
+	LP_3D       direct3d;
+	LP_3DDEVICE device3d;
 	LP_SPRITE	sprite;
-    D3DPRESENT_PARAMETERS d3dpp;
-    D3DDISPLAYMODE pMode;
+	D3DPRESENT_PARAMETERS d3dpp;
+	D3DDISPLAYMODE pMode;
 
-    // 다른 변수들
-    HRESULT     result;         // 윈도우 생성 결과
-    HWND        hwnd;
-    bool        fullscreen;
-    int         width;
-    int         height;
-    COLOR_ARGB  backColor;      // 배경색
+	// 다른 변수들
+	HRESULT     result;         // 윈도우 생성 결과
+	HWND        hwnd;
+	bool        fullscreen;
+	int         width;
+	int         height;
+	COLOR_ARGB  backColor;      // 배경색
 
-    // D3D 파라미터 수정
-    void    initD3Dpp();
+	// D3D 파라미터 수정
+	void    initD3Dpp();
 
 public:
-    Graphics();
-    virtual ~Graphics();
+	Graphics();
+	virtual ~Graphics();
 
-    void    releaseAll();
+	void    releaseAll();
 
 	// 텍스처를 불러오는 함수
 	HRESULT loadTexture(const char *filename, COLOR_ARGB transcolor,
-							UINT &width, UINT &height, LP_TEXTURE &Texture);
+		UINT &width, UINT &height, LP_TEXTURE &Texture);
 	// SpriteData 구조체의 정보를 토대로 스프라이트 그림
 	void drawSprite(const SpriteData &spriteData, COLOR_ARGB color);
 
-    // DirectX 그래픽 초기화
-    // hw = handle to window
-    void    initialize(HWND hw, int width, int height, bool fullscreen);
+	// DirectX 그래픽 초기화
+	// hw = handle to window
+	void    initialize(HWND hw, int width, int height, bool fullscreen);
 
-    // 화면에 백버퍼 표시
-    HRESULT showBackbuffer();
+	// 화면에 백버퍼 표시
+	HRESULT showBackbuffer();
 
-    // 어뎁터가 호환되는지 체크함
-    bool    isAdapterCompatible();
+	// 어뎁터가 호환되는지 체크함
+	bool    isAdapterCompatible();
 
 	// 그래픽디바이스 초기화
-    HRESULT reset();
+	HRESULT reset();
 
-    // get함수들
-    LP_3D   get3D()             { return direct3d; } // LP_3D 타입 리턴
-    LP_3DDEVICE get3Ddevice()   { return device3d; } // LP_3DDEVICE 타입 리턴
+	// get함수들
+	LP_3D   get3D() { return direct3d; } // LP_3D 타입 리턴
+	LP_3DDEVICE get3Ddevice() { return device3d; } // LP_3DDEVICE 타입 리턴
 
-    HDC     getDC()             { return GetDC(hwnd); }
+	HDC     getDC() { return GetDC(hwnd); }
 
-    // lost된 디바이스가 있는지 테스트
-    HRESULT getDeviceState();
+	// lost된 디바이스가 있는지 테스트
+	HRESULT getDeviceState();
 
-    //============================================
-    // 실행 속도를 위한 인라인 함수.
-    // 함수 호출 오버헤드를 없애 실행속도를 높임.
-    //============================================
+	//============================================
+	// 실행 속도를 위한 인라인 함수.
+	// 함수 호출 오버헤드를 없애 실행속도를 높임.
+	//============================================
 
-    // 화면 클리어
-    void setBackColor(COLOR_ARGB c) {backColor = c;}
+	// 화면 클리어
+	void setBackColor(COLOR_ARGB c) { backColor = c; }
 
 	// Sprite 그리기 시작
 	void spriteBegin()
@@ -141,23 +142,29 @@ public:
 	}
 
 	// Scene 시작, 백버퍼 클리어
-    HRESULT beginScene() {
-        result = E_FAIL;
-        if(device3d == NULL)
-            return result;
-        // 백버퍼를 배경색으로 클리어
-        device3d->Clear(0, NULL, D3DCLEAR_TARGET, backColor, 1.0F, 0);
-        result = device3d->BeginScene();          // 씬 그리기 시작
-        return result;
-    }
+	HRESULT beginScene() {
+		result = E_FAIL;
+		if (device3d == NULL)
+			return result;
+		// 백버퍼를 배경색으로 클리어
+		device3d->Clear(0, NULL, D3DCLEAR_TARGET, backColor, 1.0F, 0);
+		result = device3d->BeginScene();          // 씬 그리기 시작
+		return result;
+	}
 
 	// Scene 종료
-    HRESULT endScene() {
-        result = E_FAIL;
-        if(device3d)
-            result = device3d->EndScene();
-        return result;
-    }
+	HRESULT endScene() {
+		result = E_FAIL;
+		if (device3d)
+			result = device3d->EndScene();
+		return result;
+	}
+
+	float Vector2Length(const VECTOR2 *v) { return D3DXVec2Length(v); }
+	float Vector2Dot(const VECTOR2 *v1, const VECTOR2 *v2) {
+		return D3DXVec2Dot(v1, v2);
+	}
+	void Vector2Normalize(VECTOR2 *v) { D3DXVec2Normalize(v, v);  }
 };
 
 #endif

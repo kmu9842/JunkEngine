@@ -33,10 +33,7 @@
     <ClCompile Include="..\Source\textureManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\Source\image.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Headers\Junk2DSprite.cpp">
+    <ClCompile Include="..\Source\Junk2DSprite.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
