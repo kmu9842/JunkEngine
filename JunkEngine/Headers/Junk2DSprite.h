@@ -31,9 +31,9 @@ public:
 	Junk2DSprite();			// 생성자
 	virtual ~Junk2DSprite();	// 소멸자
 
-								//-----------Get 함수들---------------//
+	//-----------Get 함수들---------------//
 
-								// SpriteData 구조체의 참조형을 반환
+	// SpriteData 구조체의 참조형을 반환
 	const virtual SpriteData& getSpriteInfo() { return spriteData; }
 	// visible 매개변수를 반환
 	virtual bool  getVisible() { return visible; }

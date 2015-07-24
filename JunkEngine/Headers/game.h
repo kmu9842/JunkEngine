@@ -55,10 +55,8 @@ public:
 
     virtual void update() = 0;		// 게임요소 갱신
     virtual void ai() = 0;			// AI 계산
-
     virtual void collisions() = 0;	// 충돌 확인
-
-    virtual void render() = 0;		// 스프라이트가 아닌것들을 그림
+    virtual void render() = 0;		// 렌더링
 };
 
 #endif

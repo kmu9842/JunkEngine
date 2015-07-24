@@ -15,7 +15,7 @@
 #define LP_3D       LPDIRECT3D9
 #define LP_SPRITE	LPD3DXSPRITE
 #define LP_TEXTURE  LPDIRECT3DTEXTURE9  // 
-#define VECTOR2		D3DXVECTOR2
+#define VECTOR2		D3DXVECTOR2 
 
 // 색상 정의
 #define COLOR_ARGB DWORD
@@ -161,10 +161,10 @@ public:
 	}
 
 	float Vector2Length(const VECTOR2 *v) { return D3DXVec2Length(v); }
-	float Vector2Dot(const VECTOR2 *v1, const VECTOR2 *v2) {
+	static float Vector2Dot(const VECTOR2 *v1, const VECTOR2 *v2) {
 		return D3DXVec2Dot(v1, v2);
 	}
-	void Vector2Normalize(VECTOR2 *v) { D3DXVec2Normalize(v, v);  }
+	static void Vector2Normalize(VECTOR2 *v) { D3DXVec2Normalize(v, v);  }
 };
 
 #endif

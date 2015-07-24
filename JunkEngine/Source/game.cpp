@@ -163,8 +163,6 @@ void Game::run(HWND hwnd)
     if (!paused)                    
     {
         update();                   // 모든 게임요소 갱신
-        ai();                       // AI처리
-        collisions();               // 충돌 처리
         input->vibrateControllers(frameTime); // 컨트롤러 진동처리
     }
     renderGame();                   // 모든 요소 렌더링

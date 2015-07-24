@@ -72,6 +72,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Source\entity.cpp" />
     <ClCompile Include="..\Source\game.cpp" />
     <ClCompile Include="..\Source\graphics.cpp" />
     <ClCompile Include="..\Source\input.cpp" />
@@ -82,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Headers\constants.h" />
+    <ClInclude Include="..\Headers\entity.h" />
     <ClInclude Include="..\Headers\game.h" />
     <ClInclude Include="..\Headers\gameError.h" />
     <ClInclude Include="..\Headers\graphics.h" />

@@ -1,0 +1,5 @@
+﻿All packages are already installed and there is nothing to restore.
+NuGet package restore finished.
+1>------ 빌드 시작: 프로젝트: JunkEngine, 구성: Release Win32 ------
+1>  JunkEngine.vcxproj -> C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.exe
+========== 빌드: 성공 1, 실패 0, 최신 0, 생략 0 ==========
