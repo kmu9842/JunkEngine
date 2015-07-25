@@ -170,8 +170,8 @@ void Game::run(HWND hwnd)
 
     input->clear(inputNS::KEYS_PRESSED); // 입력된것 초기화
 
-	system("CLS");
-	printf("%.1f\n", fps);
+	//system("CLS");
+	//printf("%.1f\n", fps);
 }
 
 void Game::releaseAll()

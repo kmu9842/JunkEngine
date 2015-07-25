@@ -19,16 +19,17 @@ void MainGame::initialize(HWND hwnd)
 
 	BackGround.settingTexture(graphics, "..\\Resources\\bg.png");
 	
-	runner.initialize(graphics, "..\\Resources\\spritesheet.png", 240, 210, 2);
-	runner.setXY(GAME_WIDTH / 4, GAME_HEIGHT / 4);
-	runner.setAnimation(0, 3, 0, 0.1f);
+	runner.initialize(graphics, "..\\Resources\\m-water001.png", 260, 264, 2);
+	runner.setXY(GAME_WIDTH / 4-120, GAME_HEIGHT / 4);
+	//runner.setAnimation(0, 3, 0, 0.1f);
 	runner.setDegrees(0);
+	runner.setScale(0.5f);
 	runner.setCollisionType(entityNS::COLLISION_TYPE::BOX);
 
-	runner2.initialize(graphics, "..\\Resources\\spritesheet.png", 240, 210, 2);
-	runner2.setXY(GAME_WIDTH / 2 + 100 , GAME_HEIGHT / 4);
-	runner2.setAnimation(0, 3, 0, 0.1f);
+	runner2.initialize(graphics, "..\\Resources\\m-water002.png", 260, 264, 1);
+	runner2.setXY(GAME_WIDTH / 2  , GAME_HEIGHT / 4);
 	runner2.setDegrees(0);
+	runner2.setScale(0.5f);
 	runner2.setCollisionType(entityNS::COLLISION_TYPE::BOX);
 
 	return;
@@ -50,42 +51,40 @@ void MainGame::update()
 	
 	//collisions();
 
+	runner.collidesWith(runner2);
 
-	if (!runner.collidesWith(runner2)) {
-		if (input->isKeyDown(VK_RIGHT)) {
-			runner.setX(runner.getX() + frameTime * 80.0f);
-			if (runner.getX() > GAME_WIDTH) {
-				runner.setX((float)-runner.getWidth() + frameTime * 80.0f);
-			}
-			runner.update(frameTime);
+	if (input->isKeyDown(VK_RIGHT)) {
+		runner.setX(runner.getX() + frameTime * 120.0f);
+		if (runner.getX() > GAME_WIDTH) {
+			runner.setX((float)-runner.getWidth() + frameTime * 120.0f);
 		}
+		runner.update(frameTime);
+	}
 
-		if (input->isKeyDown(VK_LEFT)) {
-			runner.setX(runner.getX() - frameTime * 80.0f);
-			if (runner.getX() < -runner.getWidth()) {
-				runner.setX((float)GAME_WIDTH);
-			}
-			runner.update(frameTime);
+	if (input->isKeyDown(VK_LEFT)) {
+		runner.setX(runner.getX() - frameTime * 120.0f);
+		if (runner.getX() < -runner.getWidth()) {
+			runner.setX((float)GAME_WIDTH);
 		}
+		runner.update(frameTime);
+	}
 
-		if (input->isKeyDown(VK_UP)) {
-			runner.setY(runner.getY() - frameTime * 80.0f);
-			if (runner.getY() < -runner.getHeight()) {
-				runner.setY((float)GAME_HEIGHT);
-			}
-			runner.update(frameTime);
+	if (input->isKeyDown(VK_UP)) {
+		runner.setY(runner.getY() - frameTime * 120.0f);
+		if (runner.getY() < -runner.getHeight()) {
+			runner.setY((float)GAME_HEIGHT);
 		}
+		runner.update(frameTime);
+	}
 
-		if (input->isKeyDown(VK_DOWN)) {
-			runner.setY(runner.getY() + frameTime * 80.0f);
-			if (runner.getY() > GAME_HEIGHT) {
-				runner.setY((float)-runner.getHeight());
-			}
-			runner.update(frameTime);
+	if (input->isKeyDown(VK_DOWN)) {
+		runner.setY(runner.getY() + frameTime * 120.0f);
+		if (runner.getY() > GAME_HEIGHT) {
+			runner.setY((float)-runner.getHeight());
 		}
+		runner.update(frameTime);
 	}
 	
-	runner2.update(frameTime);
 
 }
 

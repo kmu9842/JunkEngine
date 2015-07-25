@@ -34,6 +34,7 @@ class Entity : public Junk2DSprite
     HRESULT hr;             // standard return type
     bool    active;         // 활성화 여부
     bool    rotatedBoxReady;// true when rotated collision box is ready
+	bool	isTrigger;		// 충돌체 여부
     
 	// Separating axis collision detection helper functions
     void computeRotatedBox();
@@ -100,6 +101,11 @@ class Entity : public Junk2DSprite
     virtual void initialize(Graphics *g, const char * filename, int width, int height, int ncols);
     // 활성화
     virtual void activate();
+	/*
+	virtual void setXY(float newX, float newY) { 
+		center.x = newX;	  center.y = newY;
+		spriteData.x = newX;  spriteData.y = newY; 
+	}*/
 
     virtual void ai(float frameTime, Entity &ent);
 
