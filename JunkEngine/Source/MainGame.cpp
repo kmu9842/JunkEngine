@@ -24,13 +24,13 @@ void MainGame::initialize(HWND hwnd)
 	//runner.setAnimation(0, 3, 0, 0.1f);
 	runner.setDegrees(0);
 	runner.setScale(0.5f);
-	runner.setCollisionType(entityNS::COLLISION_TYPE::BOX);
+	runner.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
 
 	runner2.initialize(graphics, "..\\Resources\\m-water002.png", 260, 264, 1);
 	runner2.setXY(GAME_WIDTH / 2  , GAME_HEIGHT / 4);
 	runner2.setDegrees(0);
 	runner2.setScale(0.5f);
-	runner2.setCollisionType(entityNS::COLLISION_TYPE::BOX);
+	runner2.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
 
 	return;
 }
@@ -52,13 +52,13 @@ void MainGame::update()
 	//collisions();
 
 	runner.collidesWith(runner2);
+	runner.gravityForce();
 
 	if (input->isKeyDown(VK_RIGHT)) {
 		runner.setX(runner.getX() + frameTime * 120.0f);
 		if (runner.getX() > GAME_WIDTH) {
 			runner.setX((float)-runner.getWidth() + frameTime * 120.0f);
 		}
-		runner.update(frameTime);
 	}
 
 	if (input->isKeyDown(VK_LEFT)) {
@@ -66,7 +66,6 @@ void MainGame::update()
 		if (runner.getX() < -runner.getWidth()) {
 			runner.setX((float)GAME_WIDTH);
 		}
-		runner.update(frameTime);
 	}
 
 	if (input->isKeyDown(VK_UP)) {
@@ -74,7 +73,6 @@ void MainGame::update()
 		if (runner.getY() < -runner.getHeight()) {
 			runner.setY((float)GAME_HEIGHT);
 		}
-		runner.update(frameTime);
 	}
 
 	if (input->isKeyDown(VK_DOWN)) {
@@ -82,10 +80,10 @@ void MainGame::update()
 		if (runner.getY() > GAME_HEIGHT) {
 			runner.setY((float)-runner.getHeight());
 		}
-		runner.update(frameTime);
+		
 	}
 	
-
+	runner.update(frameTime);
 }
 
 // AI

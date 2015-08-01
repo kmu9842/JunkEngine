@@ -4,7 +4,7 @@
 
 #include "game.h"
 #include "Junk2DSprite.h"
-#include "entity.h"
+#include "Junk2Dentity.h"
 
 // 메인 게임 클래스, Game클래스로 부터 상속 받음
 class MainGame : public Game
@@ -12,8 +12,8 @@ class MainGame : public Game
 private:
 	// 게임 요소들
 	Junk2DSprite BackGround;
-	Entity runner;
-	Entity runner2;
+	Junk2Dentity runner;
+	Junk2Dentity runner2;
 	
     // 변수
 	bool vibrate = true;
