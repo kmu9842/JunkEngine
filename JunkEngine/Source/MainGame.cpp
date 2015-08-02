@@ -52,7 +52,7 @@ void MainGame::update()
 	//collisions();
 
 	runner.collidesWith(runner2);
-	runner.gravityForce();
+	//runner.gravityForce();
 
 	if (input->isKeyDown(VK_RIGHT)) {
 		runner.setX(runner.getX() + frameTime * 120.0f);

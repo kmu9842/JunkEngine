@@ -1,5 +1,5 @@
-#ifndef _ENTITY_H              
-#define _ENTITY_H
+#ifndef _JUNK2DENTITY_H              
+#define _JUNK2DENTITY_H
 #define WIN32_LEAN_AND_MEAN
 
 #include "Junk2DSprite.h"
@@ -9,7 +9,7 @@
 namespace Junk2DentityNS
 {
     enum COLLISION_TYPE {NONE, CIRCLE, BOX, ROTATED_BOX};
-    const float GRAVITY = 9.8f;         // 중력값
+    const float GRAVITY = 9.8f;     // 중력값
 }
 
 class Junk2Dentity : public Junk2DSprite
