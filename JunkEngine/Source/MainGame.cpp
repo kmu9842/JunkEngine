@@ -32,6 +32,9 @@ void MainGame::initialize(HWND hwnd)
 	runner2.setScale(0.5f);
 	runner2.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
 
+	addEntity(&runner);
+	addEntity(&runner2);
+
 	return;
 }
 
@@ -51,7 +54,7 @@ void MainGame::update()
 	
 	//collisions();
 
-	runner.collidesWith(runner2);
+	//runner.collidesWith(runner2);
 	//runner.gravityForce();
 
 	if (input->isKeyDown(VK_RIGHT)) {
@@ -83,15 +86,11 @@ void MainGame::update()
 		
 	}
 	
-	runner.update(frameTime);
+	//runner.update(frameTime);
 }
 
 // AI
 void MainGame::ai()
-{}
-
-// 충돌 처리
-void MainGame::collisions()
 {}
 
 // 렌더링, 이미지 표시

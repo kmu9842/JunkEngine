@@ -1,6 +1,6 @@
 #include "..\\Headers\\Junk2Dentity.h"
 
-Junk2Dentity::Junk2Dentity() : Junk2DSprite()
+Junk2DEntity::Junk2DEntity() : Junk2DSprite()
 {
     radius = 1.0;
 	edge.left = -1;
@@ -22,7 +22,7 @@ Junk2Dentity::Junk2Dentity() : Junk2DSprite()
 }
 
 // 충돌체 초기화
-void Junk2Dentity::initialize(Graphics *g, const char * filename, int width, int height, int ncols)
+void Junk2DEntity::initialize(Graphics *g, const char * filename, int width, int height, int ncols)
 {
 	Junk2DSprite::settingTexture(g, filename, width, height, ncols);
 
@@ -36,13 +36,13 @@ void Junk2Dentity::initialize(Graphics *g, const char * filename, int width, int
 }
 
 // 충돌체 활성화
-void Junk2Dentity::activate()
+void Junk2DEntity::activate()
 {
 	active = true;
 }
 
 // 충돌체 업데이트
-void Junk2Dentity::update(float frameTime)
+void Junk2DEntity::update(float frameTime)
 {
 	velocity += deltaV;
 	deltaV.x = 0;
@@ -51,11 +51,11 @@ void Junk2Dentity::update(float frameTime)
 	rotatedBoxReady = false;    // 회전 오프
 }
 
-void Junk2Dentity::ai(float frameTime, Junk2Dentity &ent)
+void Junk2DEntity::ai(float frameTime, Junk2DEntity &ent)
 {}
 
 // ent와의 충돌 여부
-bool Junk2Dentity::collidesWith(Junk2Dentity &ent) {
+bool Junk2DEntity::collidesWith(Junk2DEntity &ent) {
 	// if either Junk2Dentity is not active then no collision may occcur
 	if (!active || !ent.getActive())
 		return false;
@@ -76,7 +76,7 @@ bool Junk2Dentity::collidesWith(Junk2Dentity &ent) {
 }
 
 // 원형 충돌체끼리의 충돌 여부
-bool Junk2Dentity::collideCircle(Junk2Dentity &ent) {
+bool Junk2DEntity::collideCircle(Junk2DEntity &ent) {
 	distSquared = *getCenter() - *ent.getCenter();
 	distSquared.x = distSquared.x * distSquared.x;
 	distSquared.y = distSquared.y * distSquared.y;
@@ -92,7 +92,7 @@ bool Junk2Dentity::collideCircle(Junk2Dentity &ent) {
 }
 
 // 상자형 충돌체끼리의 충돌 여부
-bool Junk2Dentity::collideBox(Junk2Dentity &ent)
+bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 {
 	// 활성 여부
 	if (!active || !ent.getActive())
@@ -152,7 +152,7 @@ bool Junk2Dentity::collideBox(Junk2Dentity &ent)
 }
 
 // 각도가 틀어진 상자끼리의 충돌 여부
-bool Junk2Dentity::collideRotatedBox(Junk2Dentity &ent)
+bool Junk2DEntity::collideRotatedBox(Junk2DEntity &ent)
 {
     computeRotatedBox();                    
     ent.computeRotatedBox();               
@@ -164,7 +164,7 @@ bool Junk2Dentity::collideRotatedBox(Junk2Dentity &ent)
 }
 
 // 
-bool Junk2Dentity::projectionsOverlap(Junk2Dentity &ent)
+bool Junk2DEntity::projectionsOverlap(Junk2DEntity &ent)
 {
     float projection, min01, max01, min03, max03;
 
@@ -199,7 +199,7 @@ bool Junk2Dentity::projectionsOverlap(Junk2Dentity &ent)
     return true;                            
 }
 
-bool Junk2Dentity::collideRotatedBoxCircle(Junk2Dentity &ent)
+bool Junk2DEntity::collideRotatedBoxCircle(Junk2DEntity &ent)
 {
     float min01, min03, max01, max03, center01, center03;
 
@@ -229,7 +229,7 @@ bool Junk2Dentity::collideRotatedBoxCircle(Junk2Dentity &ent)
     return true;
 }
 
-bool Junk2Dentity::collideCornerCircle(VECTOR2 corner, Junk2Dentity &ent)
+bool Junk2DEntity::collideCornerCircle(VECTOR2 corner, Junk2DEntity &ent)
 {
     distSquared = corner - *ent.getCenter();            // corner - circle
     distSquared.x = distSquared.x * distSquared.x;      // difference squared
@@ -245,7 +245,7 @@ bool Junk2Dentity::collideCornerCircle(VECTOR2 corner, Junk2Dentity &ent)
     return false;
 }
 
-void Junk2Dentity::computeRotatedBox()
+void Junk2DEntity::computeRotatedBox()
 {
     if(rotatedBoxReady)
         return;
@@ -291,7 +291,7 @@ void Junk2Dentity::computeRotatedBox()
     rotatedBoxReady = true;
 }
 
-bool Junk2Dentity::outsideRect(RECT rect)
+bool Junk2DEntity::outsideRect(RECT rect)
 {
     if( spriteData.x + spriteData.width*getScale() < rect.left || 
         spriteData.x > rect.right ||
@@ -301,10 +301,10 @@ bool Junk2Dentity::outsideRect(RECT rect)
     return false;
 }
 
-void Junk2Dentity::damage(int weapon)
+void Junk2DEntity::damage(int weapon)
 {}
 
-void Junk2Dentity::bounce(VECTOR2 &collisionVector, Junk2Dentity &ent)
+void Junk2DEntity::bounce(VECTOR2 &collisionVector, Junk2DEntity &ent)
 {
 	VECTOR2 Vdiff = ent.getVelocity() - velocity;
 	VECTOR2 cUV = collisionVector;
@@ -323,7 +323,7 @@ void Junk2Dentity::bounce(VECTOR2 &collisionVector, Junk2Dentity &ent)
 		deltaV += ((massRatio * cUVdotVdiff) * cUV);
 }
 
-void Junk2Dentity::gravityForce()
+void Junk2DEntity::gravityForce()
 {
     if (!active && !isGravity)
         return ;

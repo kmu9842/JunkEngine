@@ -163,6 +163,7 @@ void Game::run(HWND hwnd)
     if (!paused)                    
     {
         update();                   // 모든 게임요소 갱신
+		UpdateEntity();				// 충돌 검사
         input->vibrateControllers(frameTime); // 컨트롤러 진동처리
     }
     renderGame();                   // 모든 요소 렌더링
@@ -172,6 +173,21 @@ void Game::run(HWND hwnd)
 
 	//system("CLS");
 	//printf("%.1f\n", fps);
+}
+
+void Game::addEntity(Junk2DEntity* entity) {
+	ObjectsEntity.push_back(entity);
+}
+
+void Game::UpdateEntity()
+{
+	for (auto i : ObjectsEntity) {
+		for (auto j : ObjectsEntity) {
+			if (i != j) {
+				i->collidesWith(*j);
+			}
+		}
+	}
 }
 
 void Game::releaseAll()

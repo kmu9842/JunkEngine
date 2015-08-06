@@ -4,7 +4,6 @@
 
 #include "Junk2DSprite.h"
 #include "input.h"
-#include "game.h"
 
 namespace Junk2DentityNS
 {
@@ -12,7 +11,7 @@ namespace Junk2DentityNS
     const float GRAVITY = 9.8f;     // 중력값
 }
 
-class Junk2Dentity : public Junk2DSprite
+class Junk2DEntity : public Junk2DSprite
 {
   protected:
 	Junk2DentityNS::COLLISION_TYPE collisionType;
@@ -39,24 +38,24 @@ class Junk2Dentity : public Junk2DSprite
     
 	// Separating axis collision detection helper functions
     void computeRotatedBox();
-    bool projectionsOverlap(Junk2Dentity &ent);
-    bool collideCornerCircle(VECTOR2 corner, Junk2Dentity &ent);
+    bool projectionsOverlap(Junk2DEntity &ent);
+    bool collideCornerCircle(VECTOR2 corner, Junk2DEntity &ent);
 
   public:
     // 생성자/소멸자
-	Junk2Dentity();
-    virtual ~Junk2Dentity() {}
+	Junk2DEntity();
+    virtual ~Junk2DEntity() {}
 
 	std::string collisionTag;
 
 	// 원형 충돌
 	// Pre: &ent = 다른 충돌체
 	// Post: &collisionVector 충돌체의 백터
-	virtual bool collideCircle(Junk2Dentity &ent);
-	virtual bool collideBox(Junk2Dentity &ent);
+	virtual bool collideCircle(Junk2DEntity &ent);
+	virtual bool collideBox(Junk2DEntity &ent);
 	// 돌려져있는 박스 충돌검사
-	virtual bool collideRotatedBox(Junk2Dentity &ent);
-	virtual bool collideRotatedBoxCircle(Junk2Dentity &ent);
+	virtual bool collideRotatedBox(Junk2DEntity &ent);
+	virtual bool collideRotatedBoxCircle(Junk2DEntity &ent);
 
 	// get/set 함수들
 
@@ -109,19 +108,19 @@ class Junk2Dentity : public Junk2DSprite
 		spriteData.x = newX;  spriteData.y = newY; 
 	}*/
 
-    virtual void ai(float frameTime, Junk2Dentity &ent);
+    virtual void ai(float frameTime, Junk2DEntity &ent);
 
     // 사각형의 바깥
     virtual bool outsideRect(RECT rect);
 
     // 이 충돌체가 다른 충돌체와 충돌했는가
-    virtual bool collidesWith(Junk2Dentity &ent);
+    virtual bool collidesWith(Junk2DEntity &ent);
 
 	// 충돌체가 입는 데미지
     virtual void damage(int weapon);
 
 	// 바운스
-    void bounce(VECTOR2 &collisionVector, Junk2Dentity &ent);
+    void bounce(VECTOR2 &collisionVector, Junk2DEntity &ent);
 
     // 중력 적용
     void gravityForce();

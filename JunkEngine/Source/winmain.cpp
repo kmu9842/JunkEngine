@@ -52,7 +52,10 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
                 TranslateMessage(&msg); // WinProc에 메세지 전달
                 DispatchMessage(&msg);
-            } else game->run(hwnd);    // 게임 루프 실행
+            } 
+			else {
+				game->run(hwnd); // 게임 루프 실행
+			}
         }
         SAFE_DELETE (game);     // 종료전 메모리를 비워줌
         return msg.wParam;
