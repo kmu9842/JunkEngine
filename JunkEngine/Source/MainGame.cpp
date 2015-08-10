@@ -30,9 +30,9 @@ void MainGame::initialize(HWND hwnd)
 	runner2.setXY(GAME_WIDTH / 2  , GAME_HEIGHT / 4);
 	runner2.setDegrees(0);
 	runner2.setScale(0.5f);
-	runner2.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
+	runner2.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX); 
 
-	addEntity(&runner);
+	addEntity(&runner); // 충돌 요소들이 모인 배열에 등록
 	addEntity(&runner2);
 
 	return;
