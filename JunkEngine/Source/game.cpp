@@ -188,6 +188,10 @@ void Game::UpdateEntity()
 			}
 		}
 	}
+
+	for (auto i : ObjectsEntity) {
+		i->update(frameTime);
+	}
 }
 
 void Game::releaseAll()

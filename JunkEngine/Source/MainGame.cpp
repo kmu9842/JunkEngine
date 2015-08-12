@@ -32,8 +32,16 @@ void MainGame::initialize(HWND hwnd)
 	runner2.setScale(0.5f);
 	runner2.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX); 
 
+	runner3.initialize(graphics, "..\\Resources\\m-water002.png", 260, 264, 1);
+	runner3.setXY(GAME_WIDTH / 5, GAME_HEIGHT -100);
+	runner3.setDegrees(0);
+	runner3.setScale(0.5f);
+	runner3.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
+
+
 	addEntity(&runner); // 충돌 요소들이 모인 배열에 등록
 	addEntity(&runner2);
+	addEntity(&runner3);
 
 	return;
 }
@@ -55,7 +63,7 @@ void MainGame::update()
 	//collisions();
 
 	//runner.collidesWith(runner2);
-	//runner.gravityForce();
+	runner.gravityForce();
 
 	if (input->isKeyDown(VK_RIGHT)) {
 		runner.setX(runner.getX() + frameTime * 120.0f);
@@ -102,6 +110,7 @@ void MainGame::render()
 	BackGround.draw();
 	runner.draw();
 	runner2.draw();
+	runner3.draw();
 
 	graphics->spriteEnd();
 }

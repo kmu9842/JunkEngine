@@ -13,6 +13,7 @@ private:
 	Junk2DSprite BackGround;
 	Junk2DEntity runner;
 	Junk2DEntity runner2;
+	Junk2DEntity runner3;
 	
     // º¯¼ö
 	bool vibrate = true;
