@@ -194,6 +194,35 @@ void Game::UpdateEntity()
 	}
 }
 
+void Game::mapInput(const char* mapName)
+{
+	std::ifstream MapIn;
+	MapIn.open(mapName);
+
+	if (MapIn.is_open()) {
+		MapIn >> mapMaxX;
+		MapIn >> mapMaxY;
+
+		for (int i = 0; i < mapMaxX; i++) {
+			for (int j = 0; j < mapMaxY; j++) {
+				MapIn >> Maps[i][j];
+			}
+		}
+	}
+}
+
+void Game::LoadMap()
+{
+	for (int i = 0; i < mapMaxX; i++) {
+		for (int j = 0; j < mapMaxY; j++) {
+			if (Maps[i][j] == 1) {
+				// MapsEntity에 연결 예정
+				// initialize에 선언되는 것처럼 이곳에서도 초기화 해줌
+			}
+		}
+	}
+}
+
 void Game::releaseAll()
 {}
 

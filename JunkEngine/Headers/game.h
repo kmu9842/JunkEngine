@@ -5,6 +5,7 @@
 #include <vector>
 #include <windows.h>
 #include <Mmsystem.h>
+#include <fstream>
 #include "Junk2Dentity.h"
 #include "constants.h"
 #include "gameError.h"
@@ -12,7 +13,8 @@
 class Game
 {
 protected:
-	std::vector<Junk2DEntity*> ObjectsEntity; // 충돌 요소들을 관리하는 배열
+	std::vector<Junk2DEntity*> ObjectsEntity;	// 충돌 요소들을 관리하는 배열
+	std::vector<Junk2DEntity*> MapsEntity;		// 지형 충돌 요소들을 관리하는 배열 (추후 다른 엔티티로 대체 예정)
 
 	// 공통 속성
 	Graphics *graphics;         // Graphics 객체 포인터
@@ -27,6 +29,10 @@ protected:
 	DWORD   sleepTime;          // 프레임 사이의 대기 단위 시간
 	bool    paused;             // 게임 일시정지 상태
 	bool    initialized;        // 초기화
+
+	int Maps[1000][1000];
+	int mapMaxX, mapMaxY;
+	
 
 public:
 	Game(); // 생성자
@@ -57,6 +63,9 @@ public:
 		PostMessage(hwnd, WM_DESTROY, 0, 0);
 	}
 	// ------------------------------//
+
+	virtual void mapInput(const char* mapName);
+	virtual void LoadMap();
 
 	virtual void update() = 0;		// 게임요소 갱신
 	virtual void ai() = 0;			// AI 계산
