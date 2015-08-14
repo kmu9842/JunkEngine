@@ -199,6 +199,16 @@ void Game::mapInput(const char* mapName)
 	std::ifstream MapIn;
 	MapIn.open(mapName);
 
+	/* 맵툴 출력 규격 
+		x y
+		0 0 0 1 0 0
+		0 0 0 1 1 1 
+		
+		0  = 빈 공간
+		1  = 충돌
+		2~ = 오브젝트 이벤트
+	*/
+
 	if (MapIn.is_open()) {
 		MapIn >> mapMaxX;
 		MapIn >> mapMaxY;
@@ -216,10 +226,25 @@ void Game::LoadMap()
 	for (int i = 0; i < mapMaxX; i++) {
 		for (int j = 0; j < mapMaxY; j++) {
 			if (Maps[i][j] == 1) {
-				// MapsEntity에 연결 예정
+				// MapsEntity에 연결
 				// initialize에 선언되는 것처럼 이곳에서도 초기화 해줌
+				// 충돌체 정보만 저장, 드로잉 할 필요 없음
+				Junk2DEntity tmp;								
+				tmp.initialize(graphics, "..\\Resources\\mapTile.png", 32, 32, 2);
+				tmp.setXY(i * 32, j * 32);
+				tmp.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
+
+				MapsEntity.push_back(tmp);
+			}
+
+			// 오브젝트 이벤트
+			if (Maps[i][j] >= 2) {
 			}
 		}
+	}
+
+	for (auto i : MapsEntity) {
+		addEntity(&i);
 	}
 }
 

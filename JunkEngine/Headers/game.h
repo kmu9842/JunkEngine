@@ -14,7 +14,7 @@ class Game
 {
 protected:
 	std::vector<Junk2DEntity*> ObjectsEntity;	// 충돌 요소들을 관리하는 배열
-	std::vector<Junk2DEntity*> MapsEntity;		// 지형 충돌 요소들을 관리하는 배열 (추후 다른 엔티티로 대체 예정)
+	std::vector<Junk2DEntity> MapsEntity;		// 지형 충돌 요소들을 관리하는 배열 (추후 다른 엔티티로 대체 예정)
 
 	// 공통 속성
 	Graphics *graphics;         // Graphics 객체 포인터

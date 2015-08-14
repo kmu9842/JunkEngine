@@ -38,10 +38,12 @@ void MainGame::initialize(HWND hwnd)
 	runner3.setScale(0.5f);
 	runner3.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
 
-
 	addEntity(&runner); // 충돌 요소들이 모인 배열에 등록
 	addEntity(&runner2);
 	addEntity(&runner3);
+
+	// mapInput("//map.minfo");
+	// LoadMap();
 
 	return;
 }
