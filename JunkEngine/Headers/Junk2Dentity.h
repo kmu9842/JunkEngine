@@ -35,6 +35,7 @@ class Junk2DEntity : public Junk2DSprite
     bool    rotatedBoxReady;// true when rotated collision box is ready
 	bool	isTrigger;		// 충돌체 여부
 	bool	isGravity;		// 중력 여부
+	bool	isGround;		// 바닥과 붙은지의 여부
     
 	// Separating axis collision detection helper functions
     void computeRotatedBox();

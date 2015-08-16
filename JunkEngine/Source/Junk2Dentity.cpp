@@ -19,6 +19,7 @@ Junk2DEntity::Junk2DEntity() : Junk2DSprite()
 	collisionTag = "None";
 	isTrigger = false;
 	isGravity = false;
+	isGround  = false;
 }
 
 // 충돌체 초기화
@@ -125,9 +126,10 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 				setX(getX() + 1);
 			}
 
-			else if (getCenterY() + edge.bottom * getScale() >= ent.getCenterY() + ent.edge.top * ent.getScale() &&
+			else if (getCenterY() + edge.bottom * getScale() >= ent.getCenterY() + ent.edge.top * ent.getScale() && // 하단 충돌
 				getCenterY() + edge.bottom * getScale() <= (ent.getCenterY() + ent.edge.bottom  * ent.getScale())) {
 				setY(getY() - 1);
+				isGround = true;
 			}
 
 			else if (getCenterY() + edge.top * getScale() <= ent.getCenterY() + ent.edge.bottom * ent.getScale() &&
@@ -141,6 +143,12 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 		*/}
         return true;
     }
+
+	else if (!isGround && isGravity) {
+		setY(getY() + 9.8f);
+	}
+
+	isGround = false;
 	/*
 	if ((getCenterX() + edge.left*getScale() <= ent.getCenterX() + ent.getEdge().right*ent.getScale())) {
 		if (!isTrigger) {
@@ -328,7 +336,7 @@ void Junk2DEntity::gravityForce()
     if (!active && !isGravity)
         return ;
 
-	setY(getY() + 9.8f);
-	//collidesWith();
-	update(0.5f);
+	
+
+	//update(0.5f);
 }

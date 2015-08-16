@@ -182,7 +182,7 @@ void Game::addEntity(Junk2DEntity* entity) {
 void Game::UpdateEntity()
 {
 	for (auto i : ObjectsEntity) {
-		for (auto j : ObjectsEntity) {
+		for (auto j = i++ ; j != ObjectsEntity.end; j++) {
 			if (i != j) {
 				i->collidesWith(*j);
 			}

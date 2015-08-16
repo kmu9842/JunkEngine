@@ -2,6 +2,7 @@
 #define _CONSTANTS_H            
 #define WIN32_LEAN_AND_MEAN
 
+#include <vector>
 #include <windows.h>
 
 #define TRANSCOLOR  SETCOLOR_ARGB(0,255,0,255) 

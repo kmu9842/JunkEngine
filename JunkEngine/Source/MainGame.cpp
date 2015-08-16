@@ -25,6 +25,7 @@ void MainGame::initialize(HWND hwnd)
 	runner.setDegrees(0);
 	runner.setScale(0.5f);
 	runner.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
+	runner.setGravity(true);
 
 	runner2.initialize(graphics, "..\\Resources\\m-water002.png", 260, 264, 1);
 	runner2.setXY(GAME_WIDTH / 2  , GAME_HEIGHT / 4);
@@ -65,7 +66,6 @@ void MainGame::update()
 	//collisions();
 
 	//runner.collidesWith(runner2);
-	runner.gravityForce();
 
 	if (input->isKeyDown(VK_RIGHT)) {
 		runner.setX(runner.getX() + frameTime * 120.0f);

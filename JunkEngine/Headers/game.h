@@ -2,7 +2,6 @@
 #define _GAME_H                 
 #define WIN32_LEAN_AND_MEAN
 
-#include <vector>
 #include <windows.h>
 #include <Mmsystem.h>
 #include <fstream>
@@ -13,6 +12,7 @@
 class Game
 {
 protected:
+	// 충돌 배열들
 	std::vector<Junk2DEntity*> ObjectsEntity;	// 충돌 요소들을 관리하는 배열
 	std::vector<Junk2DEntity> MapsEntity;		// 지형 충돌 요소들을 관리하는 배열 (추후 다른 엔티티로 대체 예정)
 
