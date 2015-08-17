@@ -20,6 +20,7 @@ Junk2DEntity::Junk2DEntity() : Junk2DSprite()
 	isTrigger = false;
 	isGravity = false;
 	isGround  = false;
+	isRigidBody = false;
 }
 
 // 충돌체 초기화
@@ -105,16 +106,20 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 		(getCenterY() + edge.top*getScale() <= ent.getCenterY() + ent.getEdge().bottom*ent.getScale()))
 	{
 		if (!isTrigger) {
+			// 충돌 다시만들어야함
+			// 지금 까지는 충돌체 <-> 충돌체 비교후 충돌하면 서로 밀어내도록 만듬
+			// 충돌체들이 서로 밀어내도록 만들어 내는 것이 아닌 그 방향으로의 이동을 봉쇄해야함
+
 			//printf("%f\n", getCenterX() + edge.right * getScale());
 			//printf("%f\n", ent.getCenterX() + ent.edge.left * ent.getScale());
-
+			/*
 			if (getCenterX() + edge.right * getScale() >= ent.getCenterX() + ent.edge.left * ent.getScale() &&
 				getCenterX() + edge.right * getScale() <= (ent.getCenterX() + ent.edge.right  * ent.getScale()) &&
 				!((getCenterX() + edge.right * getScale()) - (ent.getCenterX() + ent.edge.left * ent.getScale())
 					>= (getCenterY() + edge.bottom * getScale()) - (ent.getCenterY() + ent.edge.top * ent.getScale())) &&
 				!((getCenterX() + edge.right * getScale()) - (ent.getCenterX() + ent.edge.left * ent.getScale())
 					>= (ent.getCenterY() + ent.edge.bottom * ent.getScale() - (getCenterY() + edge.top * getScale())))) {
-				setX(getX() - 1);
+				setX(getX() - 0.5);
 			}
 
 			else if (getCenterX() + edge.left * getScale() <= ent.getCenterX() + ent.edge.right * ent.getScale() &&
@@ -123,32 +128,28 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 					>= (getCenterY() + edge.bottom * getScale()) - (ent.getCenterY() + ent.edge.top * ent.getScale())) &&
 				!(((ent.getCenterX() + ent.edge.right * ent.getScale()) - (getCenterX() + edge.left * getScale()))
 					>= (ent.getCenterY() + ent.edge.bottom * ent.getScale() - (getCenterY() + edge.top * getScale())))) {
-				setX(getX() + 1);
+				setX(getX() + 0.5);
 			}
 
 			else if (getCenterY() + edge.bottom * getScale() >= ent.getCenterY() + ent.edge.top * ent.getScale() && // 하단 충돌
 				getCenterY() + edge.bottom * getScale() <= (ent.getCenterY() + ent.edge.bottom  * ent.getScale())) {
-				setY(getY() - 1);
+				setY(getY() - 0.5);
 				isGround = true;
 			}
 
 			else if (getCenterY() + edge.top * getScale() <= ent.getCenterY() + ent.edge.bottom * ent.getScale() &&
 				getCenterY() + edge.top * getScale() >= (ent.getCenterY() + ent.edge.top  * ent.getScale())) {
-				setY(getY() + 1);
+				setY(getY() + 0.5);
 			}
 			/*printf("%f %f %f %f\n", getCenterX() + edge.right, getCenterX() + edge.left, 
 				getCenterY() + edge.top, getCenterY() + edge.bottom);
 			printf("%f %f %f %f\n", ent.getCenterX() + ent.edge.right, ent.getCenterX() + ent.edge.left,
 				ent.getCenterY() + ent.edge.top, ent.getCenterY() + ent.edge.bottom);
-		*/}
+		*/
+		}
         return true;
     }
 
-	else if (!isGround && isGravity) {
-		setY(getY() + 9.8f);
-	}
-
-	isGround = false;
 	/*
 	if ((getCenterX() + edge.left*getScale() <= ent.getCenterX() + ent.getEdge().right*ent.getScale())) {
 		if (!isTrigger) {

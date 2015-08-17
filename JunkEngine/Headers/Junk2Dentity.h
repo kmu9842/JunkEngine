@@ -36,6 +36,7 @@ class Junk2DEntity : public Junk2DSprite
 	bool	isTrigger;		// 충돌체 여부
 	bool	isGravity;		// 중력 여부
 	bool	isGround;		// 바닥과 붙은지의 여부
+	bool	isRigidBody;
     
 	// Separating axis collision detection helper functions
     void computeRotatedBox();
@@ -88,6 +89,7 @@ class Junk2DEntity : public Junk2DSprite
     virtual void  setGravityValue(float g)       {gravity = g;}
     virtual void  setCollisionRadius(float r)    {radius = r;}
 	virtual void  setGravity(bool a)		{ isGravity = a; };
+	virtual void  setRigidbody(bool a)		{ isRigidBody = a; };
 
 	// 충돌타입 리턴 (NONE, CIRCLE, BOX, ROTATED_BOX)
     virtual Junk2DentityNS::COLLISION_TYPE getCollisionType() {return collisionType;}
