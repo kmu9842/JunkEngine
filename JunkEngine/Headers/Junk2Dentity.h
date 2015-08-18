@@ -37,6 +37,8 @@ class Junk2DEntity : public Junk2DSprite
 	bool	isGravity;		// 중력 여부
 	bool	isGround;		// 바닥과 붙은지의 여부
 	bool	isRigidBody;
+
+	
     
 	// Separating axis collision detection helper functions
     void computeRotatedBox();
@@ -47,6 +49,8 @@ class Junk2DEntity : public Junk2DSprite
     // 생성자/소멸자
 	Junk2DEntity();
     virtual ~Junk2DEntity() {}
+
+	int		dontMoveRect[4] = { 0,0,0,0 };
 
 	std::string collisionTag;
 

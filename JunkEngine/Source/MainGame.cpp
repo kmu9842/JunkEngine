@@ -67,34 +67,26 @@ void MainGame::update()
 	//collisions();
 
 	//runner.collidesWith(runner2);
+	printf("%d %d %d %d\n", runner.dontMoveRect[0], runner.dontMoveRect[1], runner.dontMoveRect[2], runner.dontMoveRect[3]);
 
-	if (input->isKeyDown(VK_RIGHT)) {
+	if (input->isKeyDown(VK_RIGHT) && runner.dontMoveRect[0]!=1) {
 		runner.setX(runner.getX() + frameTime * 120.0f);
-		if (runner.getX() > GAME_WIDTH) {
-			runner.setX((float)-runner.getWidth() + frameTime * 120.0f);
-		}
+		runner.dontMoveRect[1] = 0;
 	}
 
-	if (input->isKeyDown(VK_LEFT)) {
+	if (input->isKeyDown(VK_LEFT) && runner.dontMoveRect[1] != 1) {
 		runner.setX(runner.getX() - frameTime * 120.0f);
-		if (runner.getX() < -runner.getWidth()) {
-			runner.setX((float)GAME_WIDTH);
-		}
+		runner.dontMoveRect[0] = 0;
 	}
 
-	if (input->isKeyDown(VK_UP)) {
+	if (input->isKeyDown(VK_UP) && runner.dontMoveRect[2] != 1) {
 		runner.setY(runner.getY() - frameTime * 120.0f);
-		if (runner.getY() < -runner.getHeight()) {
-			runner.setY((float)GAME_HEIGHT);
-		}
+		runner.dontMoveRect[3] = 0;
 	}
 
-	if (input->isKeyDown(VK_DOWN)) {
+	if (input->isKeyDown(VK_DOWN) && runner.dontMoveRect[3] != 1) {
 		runner.setY(runner.getY() + frameTime * 120.0f);
-		if (runner.getY() > GAME_HEIGHT) {
-			runner.setY((float)-runner.getHeight());
-		}
-		
+		runner.dontMoveRect[2] = 0;
 	}
 	
 	//runner.update(frameTime);

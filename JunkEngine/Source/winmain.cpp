@@ -40,8 +40,8 @@ int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
         // 메인 메세지 루프
         int done = 0;
 
-		//AllocConsole();
-		//freopen("CONOUT$", "wb", stdout);
+		AllocConsole();
+		freopen("CONOUT$", "wb", stdout);
 
         while (!done)
         {
