@@ -147,6 +147,17 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
             // TODO: Add any drawing code that uses hdc here...
+
+			for (int i = 0;i<60;i++) { // 이미지 크기를 입력받은 후 이미지의 가로/32 = n
+				MoveToEx(hdc, 32*i, 0, NULL);
+				LineTo(hdc, 32*i, 1280);
+			}
+
+			for (int i = 0; i<60; i++) { // 이미지 크기를 입력받은 후 이미지의 세로/32 = n
+				MoveToEx(hdc, 0, 32*i, NULL);
+				LineTo(hdc, 1680, 32*i);
+			}
+
             EndPaint(hWnd, &ps);
         }
         break;
