@@ -144,9 +144,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         break;
     case WM_PAINT:
         {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: Add any drawing code that uses hdc here...
+			PAINTSTRUCT ps;
+			HDC hdc = BeginPaint(hWnd, &ps);
 
 			for (int i = 0;i<60;i++) { // 이미지 크기를 입력받은 후 이미지의 가로/32 = n
 				MoveToEx(hdc, 32*i, 0, NULL);
@@ -157,16 +156,26 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 				MoveToEx(hdc, 0, 32*i, NULL);
 				LineTo(hdc, 1680, 32*i);
 			}
-
-            EndPaint(hWnd, &ps);
+			EndPaint(hWnd, &ps);
         }
-        break;
+		break;
+
+	case WM_LBUTTONDOWN:
+	{
+		if (WM_LBUTTONDOWN) {
+			//Rectangle(hdc, 1, 1, 32, 32);
+		}
+		break;
+	}
+
     case WM_DESTROY:
         PostQuitMessage(0);
         break;
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);
     }
+
+	
     return 0;
 }
 
@@ -186,6 +195,7 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
             return (INT_PTR)TRUE;
         }
         break;
+	
     }
     return (INT_PTR)FALSE;
 }
