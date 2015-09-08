@@ -21,15 +21,28 @@
   </Class>
   <Class Name="MainGame" Collapsed="true">
     <Position X="0.5" Y="2.5" Width="1.5" />
+    <AssociationLine Name="runner3" Type="Junk2DEntity" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="0.828" Y="3.191" />
+        <Point X="0.828" Y="3.666" />
+        <Point X="0.182" Y="3.666" />
+        <Point X="0.182" Y="5.786" />
+        <Point X="5.938" Y="5.786" />
+        <Point X="5.938" Y="5.441" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="2.331" Y="0.391" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAABAAAAAAGgAAAAAAAAAABIIDAAAAAUAAA=</HashCode>
+      <HashCode>AAAAAAAAQAABAAAAAAGgAAAAAAAAAABIIDQAAAAUAAA=</HashCode>
       <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\MainGame.h</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="runner2" />
-      <Field Name="BackGround" />
       <Field Name="runner" />
+      <Field Name="runner2" />
       <Field Name="runner3" />
+      <Field Name="BackGround" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Input" Collapsed="true">
@@ -40,14 +53,17 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TextureManager" Collapsed="true">
-    <Position X="5.75" Y="3.5" Width="1.5" />
+    <Position X="2.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAABAAAgQARIEAAAAABAABQggABAAAAAAAAEA=</HashCode>
       <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\textureManager.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="graphics" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Junk2DEntity" Collapsed="true">
-    <Position X="5" Y="4.5" Width="2" />
+    <Position X="5" Y="4.75" Width="2" />
     <TypeIdentifier>
       <HashCode>oYgIhMgBSBgBhAAAYgFgQAkAAAQBBzBIGIRAJEIESBI=</HashCode>
       <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\Junk2Dentity.h</FileName>
@@ -55,6 +71,83 @@
   </Class>
   <Class Name="std::vector&lt;_Ty, _Alloc&gt;" Collapsed="true">
     <Position X="5" Y="1.25" Width="1.5" />
+    <NestedTypes>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::reference" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::const_iterator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::difference_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::_Mybase" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::_Myt" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::allocator_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::pointer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::const_pointer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::size_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::const_reference" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::reverse_iterator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::_Alty" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::iterator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::value_type" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+      <Typedef Name="std::vector&lt;_Ty, _Alloc&gt;::const_reverse_iterator" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>e:\programs\VC\include\vector</NewMemberFileName>
+        </TypeIdentifier>
+      </Typedef>
+    </NestedTypes>
     <TypeIdentifier>
       <HashCode>IUoEEIEqCLBMUEBAAKMIAgASAgUESAIAxQMwgwAEQgI=</HashCode>
       <FileName>e:\programs\VC\include\vector</FileName>
@@ -66,6 +159,12 @@
       <HashCode>cCgQAZhAgDAELgEAAKM+AIIACACpwgkCAACgTmQEAkQ=</HashCode>
       <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\Junk2DSprite.h</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="graphics" />
+      <Field Name="spriteData" />
+      <Field Name="textureManager" />
+      <Field Name="texture" />
+    </ShowAsAssociation>
   </Class>
   <Struct Name="SpriteData" Collapsed="true">
     <Position X="5.75" Y="2.5" Width="1.5" />

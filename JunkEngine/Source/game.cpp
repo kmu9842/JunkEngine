@@ -183,15 +183,33 @@ void Game::UpdateEntity()
 {
 	int count = 1;
 	int ctmp = 1;
+
 	for (auto i : ObjectsEntity) {
-		for (auto j : ObjectsEntity) {//= i++ ; j != ObjectsEntity.end; j++) {
+		if (i->getGravity()) {
+			i->gravityForce();
+		}
+	}
+
+	for (int i = 0; i < ObjectsEntity.size(); i++) {
+		for (int j = i+1; j < ObjectsEntity.size(); j++) {//) {
 			if (i != j) {
-				i->collidesWith(*j);
+				ObjectsEntity[i]->collidesWith(*ObjectsEntity[j]);
 			}
 		}
-			
 		
 		ctmp++;
+
+		if (i == 1)
+		std::cout << " " << !ObjectsEntity[i]->isCollid << "\n";
+
+		if (!ObjectsEntity[i]->isCollid) {
+			for (int j = 0; j < 4; j++) {
+				ObjectsEntity[i]->dontMoveRect[j] = 0;
+			}
+		}
+
+		ObjectsEntity[i]->isCollid = false;
+
 		//for (auto j = i++ ; j != ObjectsEntity.end; j++) {
 			
 		//}

@@ -5,6 +5,7 @@
 #include <windows.h>
 #include <Mmsystem.h>
 #include <fstream>
+#include <iostream>
 #include "Junk2Dentity.h"
 #include "constants.h"
 #include "gameError.h"
@@ -40,7 +41,7 @@ public:
 
 					 // --------- 멤버 함수 ---------//
 
-					 //윈도우 메세지 핸들러
+	//윈도우 메세지 핸들러
 	LRESULT messageHandler(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 	// 게임 초기화

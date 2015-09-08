@@ -36,6 +36,7 @@ class Junk2DEntity : public Junk2DSprite
 	bool	isTrigger;		// 충돌체 여부
 	bool	isGravity;		// 중력 여부
 	bool	isGround;		// 바닥과 붙은지의 여부
+	//bool	isCollid;		// 충돌중인지 여부
 	bool	isRigidBody;
 
 	
@@ -51,6 +52,7 @@ class Junk2DEntity : public Junk2DSprite
     virtual ~Junk2DEntity() {}
 
 	int		dontMoveRect[4] = { 0,0,0,0 };
+	bool	isCollid;
 
 	std::string collisionTag;
 
@@ -82,7 +84,7 @@ class Junk2DEntity : public Junk2DSprite
     virtual const VECTOR2 getVelocity() const {return velocity;}
     virtual bool  getActive()         const {return active;}
     virtual float getMass()           const {return mass;}
-    virtual float getGravity()        const {return gravity;}
+    virtual bool getGravity()        const {return isGravity;}
 
 	virtual void  setCollisionType(Junk2DentityNS::COLLISION_TYPE c)
 											{ collisionType = c; }

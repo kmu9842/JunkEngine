@@ -21,6 +21,7 @@ Junk2DEntity::Junk2DEntity() : Junk2DSprite()
 	isGravity = false;
 	isGround  = false;
 	isRigidBody = false;
+	isCollid = false;
 }
 
 // 충돌체 초기화
@@ -106,6 +107,7 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 		(getCenterY() + edge.top*getScale() <= ent.getCenterY() + ent.getEdge().bottom*ent.getScale()))
 	{
 		if (!isTrigger) {
+			printf("Collider ");
 			// 충돌 다시만들어야함
 			// 지금 까지는 충돌체 <-> 충돌체 비교후 충돌하면 서로 밀어내도록 만듬
 			// 충돌체들이 서로 밀어내도록 만들어 내는 것이 아닌 그 방향으로의 이동을 봉쇄해야함
@@ -120,6 +122,7 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 				!((getCenterX() + edge.right * getScale()) - (ent.getCenterX() + ent.edge.left * ent.getScale())
 					>= (ent.getCenterY() + ent.edge.bottom * ent.getScale() - (getCenterY() + edge.top * getScale())))) {
 				dontMoveRect[0] = 1;
+				isCollid = true;
 			}
 			else if (getCenterX() + edge.left * getScale() <= ent.getCenterX() + ent.edge.right * ent.getScale() &&
 				getCenterX() + edge.left * getScale() >= (ent.getCenterX() + ent.edge.left  * ent.getScale()) &&
@@ -128,26 +131,33 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 				!(((ent.getCenterX() + ent.edge.right * ent.getScale()) - (getCenterX() + edge.left * getScale()))
 					>= (ent.getCenterY() + ent.edge.bottom * ent.getScale() - (getCenterY() + edge.top * getScale())))) {
 				dontMoveRect[1] = 1;
+				isCollid = true;
 			}
 			else if (getCenterY() + edge.bottom * getScale() >= ent.getCenterY() + ent.edge.top * ent.getScale() && // 하단 충돌
 				getCenterY() + edge.bottom * getScale() <= (ent.getCenterY() + ent.edge.bottom  * ent.getScale())) {
 				dontMoveRect[3] = 1;
+				isCollid = true;
 			}
 			else if (getCenterY() + edge.top * getScale() <= ent.getCenterY() + ent.edge.bottom * ent.getScale() &&
 				getCenterY() + edge.top * getScale() >= (ent.getCenterY() + ent.edge.top  * ent.getScale())) {
 				dontMoveRect[2] = 1;
+				isCollid = true;
 			}
+			
 
 		}
+		else {
+			printf("Trigger ");
+		}
+
+		//std::printf("Collid");
 
         return true;
     }
-	/*
+	
 	else {
-		dontMoveRect[0] = 0;
-		dontMoveRect[1] = 0;
-		dontMoveRect[2] = 0;
-		dontMoveRect[3] = 0;
+		//isCollid = true;
+		
 	}
 
 	/*
@@ -337,7 +347,9 @@ void Junk2DEntity::gravityForce()
     if (!active && !isGravity)
         return ;
 
-	
+	if (dontMoveRect[3] == 0) {
+		setY(getY() + 0.98f);
+	}
 
 	//update(0.5f);
 }

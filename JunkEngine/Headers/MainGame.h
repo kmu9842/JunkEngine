@@ -14,6 +14,7 @@ private:
 	Junk2DEntity runner;
 	Junk2DEntity runner2;
 	Junk2DEntity runner3;
+	Junk2DEntity runner4;
 	
     // º¯¼ö
 	bool vibrate = true;
