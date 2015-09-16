@@ -106,7 +106,7 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 		(getCenterY() + edge.bottom*getScale() >= ent.getCenterY() + ent.getEdge().top*ent.getScale()) &&
 		(getCenterY() + edge.top*getScale() <= ent.getCenterY() + ent.getEdge().bottom*ent.getScale()))
 	{
-		if (!isTrigger) {
+		if (!isTrigger && !ent.getTrigger()) {
 			printf("Collider ");
 			// 충돌 다시만들어야함
 			// 지금 까지는 충돌체 <-> 충돌체 비교후 충돌하면 서로 밀어내도록 만듬

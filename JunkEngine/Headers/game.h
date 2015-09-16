@@ -9,6 +9,7 @@
 #include "Junk2Dentity.h"
 #include "constants.h"
 #include "gameError.h"
+#include "MapClass.h"
 
 class Game
 {

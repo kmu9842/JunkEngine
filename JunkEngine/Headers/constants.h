@@ -35,6 +35,10 @@ const UCHAR ESC_KEY = VK_ESCAPE;   // esc키
 const UCHAR ALT_KEY = VK_MENU;     // Alt키
 const UCHAR ENTER_KEY = VK_RETURN;   // 엔터키
 
+// 플레이어 어빌리티
+const UINT PlayerAbility = 4;
+
+const UINT MapXY = 300;
 
 
 #endif

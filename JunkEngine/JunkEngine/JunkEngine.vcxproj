@@ -78,8 +78,10 @@
     <ClCompile Include="..\Source\input.cpp" />
     <ClCompile Include="..\Source\Junk2DSprite.cpp" />
     <ClCompile Include="..\Source\MainGame.cpp" />
+    <ClCompile Include="..\Source\MapClass.cpp" />
     <ClCompile Include="..\Source\textureManager.cpp" />
     <ClCompile Include="..\Source\winmain.cpp" />
+    <ClCompile Include="PlayerClass.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Headers\constants.h" />
@@ -91,6 +93,8 @@
     <ClInclude Include="..\Headers\input.h" />
     <ClInclude Include="..\Headers\Junk2DSprite.h" />
     <ClInclude Include="..\Headers\MainGame.h" />
+    <ClInclude Include="..\Headers\MapClass.h" />
+    <ClInclude Include="..\Headers\PlayerClass.h" />
     <ClInclude Include="..\Headers\textureManager.h" />
   </ItemGroup>
   <ItemGroup>

@@ -39,6 +39,12 @@
     <ClCompile Include="..\Source\Junk2Dentity.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerClass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\MapClass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Headers\input.h">
@@ -69,6 +75,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="..\Headers\Junk2Dentity.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\PlayerClass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\MapClass.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

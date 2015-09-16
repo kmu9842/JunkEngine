@@ -19,6 +19,7 @@ void MainGame::initialize(HWND hwnd)
 
 	BackGround.settingTexture(graphics, "..\\Resources\\bg.png");
 	
+	map = new Map(18, 12, graphics);
 	runner.initialize(graphics, "..\\Resources\\m-water001.png", 260, 264, 2);
 	runner.setXY(GAME_WIDTH / 4-120, GAME_HEIGHT / 4);
 	//runner.setAnimation(0, 3, 0, 0.1f);
@@ -27,12 +28,13 @@ void MainGame::initialize(HWND hwnd)
 	runner.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
 	//runner.setGravity(true);
 	runner.setRigidbody(true);
-	runner.setGravity(true);
 	
 	runner2.initialize(graphics, "..\\Resources\\m-water002.png", 260, 264, 1);
 	runner2.setXY(GAME_WIDTH / 2  , GAME_HEIGHT / 4);
 	runner2.setDegrees(0);
 	runner2.setScale(0.5f);
+	runner2.setTrigger(true);
+
 	runner2.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX); 
 
 	runner3.initialize(graphics, "..\\Resources\\m-water002.png", 260, 264, 1);
@@ -107,7 +109,9 @@ void MainGame::render()
 	graphics->spriteBegin();
 
 	// 추가할 이미지 선언
-	BackGround.draw();
+	//BackGround.draw();
+	map->drawMap();
+
 	runner.draw();
 	runner2.draw();
 	runner3.draw();

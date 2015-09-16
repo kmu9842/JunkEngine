@@ -85,12 +85,14 @@ class Junk2DEntity : public Junk2DSprite
     virtual bool  getActive()         const {return active;}
     virtual float getMass()           const {return mass;}
     virtual bool getGravity()        const {return isGravity;}
+	virtual bool getTrigger()		const {return isTrigger; }
 
 	virtual void  setCollisionType(Junk2DentityNS::COLLISION_TYPE c)
 											{ collisionType = c; }
     virtual void  setVelocity(VECTOR2 v)    {velocity = v;}
     virtual void  setDeltaV(VECTOR2 dv)     {deltaV = dv;}
     virtual void  setActive(bool a)         {active = a;}
+	virtual void  setTrigger(bool t)			{isTrigger = t; }
     virtual void  setMass(float m)          {mass = m;}
     virtual void  setGravityValue(float g)       {gravity = g;}
     virtual void  setCollisionRadius(float r)    {radius = r;}
