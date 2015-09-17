@@ -1,23 +1,8 @@
-﻿Build started 2015-09-16 오후 8:58:04.
+﻿Build started 2015-09-17 오후 8:52:14.
      1>Project "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         E:\programs\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\MapClass.cpp
-         MapClass.cpp
-     1>..\Source\MapClass.cpp(14): warning C4018: '<': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(15): warning C4018: '<': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(20): warning C4018: '<=': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(21): warning C4018: '<=': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-     1>..\Source\MapClass.cpp(35): warning C4018: '<': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(36): warning C4018: '<': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(41): warning C4018: '<': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(42): warning C4018: '<': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-     1>..\Source\MapClass.cpp(57): warning C4018: '<': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(58): warning C4018: '<': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(71): warning C4018: '<': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(72): warning C4018: '<': signed/unsigned mismatch
-     1>..\Source\MapClass.cpp(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+         E:\programs\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\MainGame.cpp
+         MainGame.cpp
        Link:
          E:\programs\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.exe" /NOLOGO XInput.lib d3d9.lib d3dx9.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.pdb" /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Release\JunkEngine.lib" /MACHINE:X86 /SAFESEH Release\Junk2Dentity.obj
          Release\game.obj
@@ -30,7 +15,7 @@
          Release\winmain.obj
          Release\PlayerClass.obj
          Generating code
-         0 of 538 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+         1 of 426 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
            0 functions were new in current compilation
            0 functions had inline decision re-evaluated but remain unchanged
          Finished generating code
@@ -39,4 +24,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.19
+Time Elapsed 00:00:01.23

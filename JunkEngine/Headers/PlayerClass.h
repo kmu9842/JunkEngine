@@ -1,12 +1,10 @@
-#ifndef _PLAYERCLASS_H              
-#define _PLAYERCLASS_H
-#define WIN32_LEAN_AND_MEAN
+
 
 #include "Junk2Dentity.h"
 #include "constants.h"
 
-class Player : Junk2DEntity {
-private : 
+class Player : public Junk2DEntity {
+private:
 	enum direction {
 		right, left, up, down
 	};
@@ -18,10 +16,11 @@ private :
 
 	int PlayerState[5];
 	//ITEM* Inventory[100];
-	
-public :
+
+public:
 	Player();
-	Player(int hp,int mp);
+	Player(int hp, int mp);
+	Player(int hp, int mp, const char *filename, Graphics* g);
 	~Player();
 
 	// 겟셋끼들
@@ -37,6 +36,7 @@ public :
 
 	// 데이터 관련 함수들
 	// virtual void PlayDataSave(); ?
+	virtual void drawPlayer();
 
 	// 행동 관련 함수들 
 	virtual void PlayMove(int dir);
@@ -44,5 +44,3 @@ public :
 	virtual void PlayerStateCheck();
 	//virtual void PlayerGetItem(ITEM* it);
 };
-
-#endif

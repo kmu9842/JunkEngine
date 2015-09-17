@@ -6,10 +6,10 @@
 #include <Mmsystem.h>
 #include <fstream>
 #include <iostream>
-#include "Junk2Dentity.h"
-#include "constants.h"
+
 #include "gameError.h"
 #include "MapClass.h"
+#include "PlayerClass.h"
 
 class Game
 {

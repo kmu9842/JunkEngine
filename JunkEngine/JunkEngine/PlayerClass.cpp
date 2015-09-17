@@ -16,8 +16,20 @@ Player::Player(int hp, int mp)
 	GameSW[100] = { 0, };
 }
 
-Player::~Player() {
+Player::Player(int hp, int mp, const char *filename, Graphics* g)
+{
+	Hp = hp;
+	Mp = mp;
+	Ability[PlayerAbility] = { 0, };
+	GameSW[100] = { 0, };
+}
 
+Player::~Player() {
+	
+}
+
+void Player::drawPlayer()
+{
 }
 
 void Player::PlayMove(int dir)

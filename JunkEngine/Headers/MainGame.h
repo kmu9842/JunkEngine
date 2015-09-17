@@ -10,12 +10,7 @@ class MainGame : public Game
 private:	
 
 	// 게임 요소들
-	Junk2DSprite BackGround;
-	Junk2DEntity runner;
-	Junk2DEntity runner2;
-	Junk2DEntity runner3;
-	Junk2DEntity runner4;
-	
+	Player player;
 	Map* map;
 
     // 변수

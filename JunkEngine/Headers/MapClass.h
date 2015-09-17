@@ -4,6 +4,7 @@
 
 #include "Junk2Dentity.h"
 #include "constants.h"
+#include "game.h"
 
 class Map : Junk2DEntity {
 private : 
@@ -13,11 +14,19 @@ private :
 	int mapData[MapXY][MapXY];
 	Junk2DEntity tiles[MapXY][MapXY];
 	Junk2DEntity TileData;
+	Junk2DEntity TileData2;
 
 public :
 	Map();
 	Map(int x, int y, Graphics* g);
 	~Map();
+
+	virtual int getMapX() { return mapX; };
+	virtual int getMapY() { return mapY; };
+	virtual int getWidth() { return width; };
+	virtual int getHeight() { return height; };
+
+	virtual Junk2DEntity* getTiles(int x, int y) { return &tiles[x][y]; };
 
 	virtual void drawMap();
 	virtual void MoveMap(int x, int y);

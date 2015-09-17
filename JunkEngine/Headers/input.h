@@ -64,6 +64,7 @@ class Input
 {
 private:
     bool keysDown[inputNS::KEYS_ARRAY_LEN];     // 특정 키를 누른 경우 true가 되는 배열 
+	bool keysUp[inputNS::KEYS_ARRAY_LEN];     // 특정 키를 뗀 경우 true가 되는 배열 
     bool keysPressed[inputNS::KEYS_ARRAY_LEN];  // 게임 루프가 동작하는 동안 특정 키를 누른 경우 true가 되는 배열 
     std::string textIn;                         // 사용자가 입력한 텍스트
     char charIn;                                // 마지막에 입력한 문자
@@ -89,6 +90,7 @@ public:
     void keyUp(WPARAM);
     void keyIn(WPARAM);		// textIn에 입력한 문자를 저장
 
+	bool isKeyUp(UCHAR vkey);			//	
     bool isKeyDown(UCHAR vkey) const;		// 가상키를 눌렀을 경우 true리턴
     bool wasKeyPressed(UCHAR vkey) const;	// 가장 최근 프레임에 특정 가상키를 눌렀을 경우 true반환
     bool anyKeyPressed() const;				// 가장 최근에 아무 키를 눌렀을 경우 true 반환 

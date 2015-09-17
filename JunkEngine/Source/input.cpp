@@ -67,14 +67,16 @@ void Input::keyDown(WPARAM wParam) // 해당 키에 대해 keysDown과 keyPress 배열을 
     if (wParam < inputNS::KEYS_ARRAY_LEN) // 키 코드가 버퍼 범위안에 있는지 확인 
     {
         keysDown[wParam] = true;    // 배열 갱신
-        keysPressed[wParam] = true; 
+        //keysPressed[wParam] = true; 
     }
 }
 
 void Input::keyUp(WPARAM wParam) // 해당 키에 대해 keysDown 배열을 false로 설정
 {
-    if (wParam < inputNS::KEYS_ARRAY_LEN) 
-        keysDown[wParam] = false;
+	if (wParam < inputNS::KEYS_ARRAY_LEN) {
+		keysDown[wParam] = false;
+		keysUp[wParam] = true;
+	}
 }
 
 void Input::keyIn(WPARAM wParam) // textIn에 입력한 문자를 저장
@@ -106,6 +108,17 @@ bool Input::isKeyDown(UCHAR vkey) const // 가상키를 눌렀을 경우 true리턴
         return keysDown[vkey];
     else
         return false;
+}
+
+bool Input::isKeyUp(UCHAR vkey) // 가상키를 눌렀을 경우 true리턴
+{
+	if (vkey < inputNS::KEYS_ARRAY_LEN){
+		bool a = keysUp[vkey];
+		keysUp[vkey] = false;
+		return a;
+	}
+	else
+		return false;
 }
 
 bool Input::wasKeyPressed(UCHAR vkey) const // 가장 최근 프레임에 특정 가상키를 눌렀을 경우 true반환
