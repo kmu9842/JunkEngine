@@ -6,7 +6,7 @@ Graphics::Graphics(){
     fullscreen = false;
     width = GAME_WIDTH;    // 게임 가로 세로크기 초기화
     height = GAME_HEIGHT;
-    backColor = SETCOLOR_ARGB(255,0,0,128); // 배경색
+    backColor = SETCOLOR_ARGB(255,0,0,0); // 배경색
 }
 
 Graphics::~Graphics(){
@@ -76,8 +76,8 @@ void Graphics::initD3Dpp(){
 		
         d3dpp.BackBufferWidth   = width;
         d3dpp.BackBufferHeight  = height;
-        if(fullscreen)                                  // 풀스크린 여부
-            d3dpp.BackBufferFormat  = D3DFMT_X8R8G8B8;  // 24비트 색상
+		if (fullscreen)                                  // 풀스크린 여부
+			d3dpp.BackBufferFormat = D3DFMT_X8R8G8B8;  // 24비트 색상
         else
             d3dpp.BackBufferFormat  = D3DFMT_UNKNOWN;   // 데스크톱에 맞춘 셋팅
         d3dpp.BackBufferCount   = 1;
