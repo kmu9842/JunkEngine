@@ -114,36 +114,62 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 
 			//printf("%f\n", getCenterX() + edge.right * getScale());
 			//printf("%f\n", ent.getCenterX() + ent.edge.left * ent.getScale());
-			
-			if (getCenterX() + edge.right * getScale() >= ent.getCenterX() + ent.edge.left * ent.getScale() &&
-				getCenterX() + edge.right * getScale() <= (ent.getCenterX() + ent.edge.right  * ent.getScale()) &&
-				!((getCenterX() + edge.right * getScale()) - (ent.getCenterX() + ent.edge.left * ent.getScale())
-					>= (getCenterY() + edge.bottom * getScale()) - (ent.getCenterY() + ent.edge.top * ent.getScale())) &&
-				!((getCenterX() + edge.right * getScale()) - (ent.getCenterX() + ent.edge.left * ent.getScale())
-					>= (ent.getCenterY() + ent.edge.bottom * ent.getScale() - (getCenterY() + edge.top * getScale())))) {
+
+			int right, left, bottom, top;
+			right = getCenterX() + getWidth()/2;
+			left = getCenterX() - getWidth()/2;
+			top = getCenterY() + getHeight();
+			bottom = getCenterY() - getHeight()/2;
+			/*
+			if (right > ent.getCenterX() + ent.getEdge().left*ent.getScale() &&
+				!(top > ent.getCenterY() + ent.getEdge().bottom*ent.getScale()) &&
+				!(bottom < ent.getCenterY() + ent.getEdge().top*ent.getScale())) {
+				dontMoveRect[0] = 1;
+			}*/
+
+			if (right > ent.getCenterX() - ent.getWidth()/2 &&
+				bottom < ent.getCenterY() + ent.getHeight() / 2 &&
+				top > ent.getCenterY() - ent.getHeight() / 2) {
 				dontMoveRect[0] = 1;
 				isCollid = true;
 			}
-			else if (getCenterX() + edge.left * getScale() <= ent.getCenterX() + ent.edge.right * ent.getScale() &&
-				getCenterX() + edge.left * getScale() >= (ent.getCenterX() + ent.edge.left  * ent.getScale()) &&
-				!(((ent.getCenterX() + ent.edge.right * ent.getScale()) - (getCenterX() + edge.left * getScale()))
-					>= (getCenterY() + edge.bottom * getScale()) - (ent.getCenterY() + ent.edge.top * ent.getScale())) &&
-				!(((ent.getCenterX() + ent.edge.right * ent.getScale()) - (getCenterX() + edge.left * getScale()))
-					>= (ent.getCenterY() + ent.edge.bottom * ent.getScale() - (getCenterY() + edge.top * getScale())))) {
+			else {
+				dontMoveRect[0] = 0;
+				isCollid = true;
+			}
+
+			if (left < ent.getCenterX() + ent.getWidth() / 2 &&
+				bottom < ent.getCenterY() + ent.getHeight() / 2 &&
+				top > ent.getCenterY() - ent.getHeight() / 2) {
 				dontMoveRect[1] = 1;
 				isCollid = true;
 			}
-			else if (getCenterY() + edge.bottom * getScale() >= ent.getCenterY() + ent.edge.top * ent.getScale() && // 하단 충돌
-				getCenterY() + edge.bottom * getScale() <= (ent.getCenterY() + ent.edge.bottom  * ent.getScale())) {
+			else {
+				dontMoveRect[1] = 0;
+				isCollid = true;
+			}
+
+			if(bottom < ent.getCenterY() + ent.getHeight() / 2 &&
+				right > ent.getCenterX() - ent.getWidth() / 2 &&
+				left < ent.getCenterX() + ent.getWidth() / 2) {
 				dontMoveRect[3] = 1;
 				isCollid = true;
 			}
-			else if (getCenterY() + edge.top * getScale() <= ent.getCenterY() + ent.edge.bottom * ent.getScale() &&
-				getCenterY() + edge.top * getScale() >= (ent.getCenterY() + ent.edge.top  * ent.getScale())) {
+			else {
+				dontMoveRect[3] = 0;
+				isCollid = true;
+			}
+
+			if (top > ent.getCenterY() - ent.getHeight() / 2 &&
+				right > ent.getCenterX() - ent.getWidth() / 2 &&
+				left < ent.getCenterX() + ent.getWidth() / 2) {
 				dontMoveRect[2] = 1;
 				isCollid = true;
 			}
-			
+			else {
+				dontMoveRect[2] = 0;
+				isCollid = true;
+			}
 
 		}
 		else {

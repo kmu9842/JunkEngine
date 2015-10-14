@@ -52,22 +52,24 @@ void MainGame::update()
 
 	//runner.collidesWith(runner2);
 
-	if (input->isKeyUp(VK_RIGHT) && player.dontMoveRect[0] != 1) {
-		//runner.setX(runner.getX() + frameTime * 120.0f);
-		map->MoveMap(map->getMapX()-32,map->getMapY());
-		//runner.setDegrees(45);
+	if (input->isKeyDown(VK_RIGHT)) {
+		if (player.dontMoveRect[0] != 1) {
+			map->MoveMap(map->getMapX() - 1, map->getMapY());
+		}	
 	}
 
-	if (input->isKeyUp(VK_LEFT) && player.dontMoveRect[1] != 1) {
-		map->MoveMap(map->getMapX() + 32, map->getMapY());
+	if (input->isKeyDown(VK_LEFT) && player.dontMoveRect[1] != 1) {
+		map->MoveMap(map->getMapX() + 1, map->getMapY());
 	}
 
-	if (input->isKeyUp(VK_UP) && player.dontMoveRect[2] != 1) {
-		map->MoveMap(map->getMapX(), map->getMapY() + 32);
+	if (input->isKeyDown(VK_UP)) {
+		if (player.dontMoveRect[2] != 1) {
+			map->MoveMap(map->getMapX(), map->getMapY() + 1);
+		}	
 	}
 
-	if (input->isKeyUp(VK_DOWN) && player.dontMoveRect[3] != 1) {
-		map->MoveMap(map->getMapX(), map->getMapY() - 32);
+	if (input->isKeyDown(VK_DOWN) && player.dontMoveRect[3] != 1) {
+		map->MoveMap(map->getMapX(), map->getMapY() - 1);
 	}
 	
 	//runner.update(frameTime);
