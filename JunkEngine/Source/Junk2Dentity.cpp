@@ -135,7 +135,7 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 			}
 			else {
 				dontMoveRect[0] = 0;
-				isCollid = true;
+				isCollid = false;
 			}
 
 			if (left < ent.getCenterX() + ent.getWidth() / 2 &&
@@ -146,7 +146,7 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 			}
 			else {
 				dontMoveRect[1] = 0;
-				isCollid = true;
+				isCollid = false;
 			}
 
 			if(bottom < ent.getCenterY() + ent.getHeight() / 2 &&
@@ -157,7 +157,7 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 			}
 			else {
 				dontMoveRect[3] = 0;
-				isCollid = true;
+				isCollid = false;
 			}
 
 			if (top > ent.getCenterY() - ent.getHeight() / 2 &&
@@ -168,7 +168,7 @@ bool Junk2DEntity::collideBox(Junk2DEntity &ent)
 			}
 			else {
 				dontMoveRect[2] = 0;
-				isCollid = true;
+				isCollid = false;
 			}
 
 		}

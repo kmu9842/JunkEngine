@@ -1,0 +1,44 @@
+﻿Build started 2015-08-17 오후 10:54:04.
+     1>Project "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\programs\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\Junk2Dentity.cpp ..\Source\game.cpp ..\Source\graphics.cpp ..\Source\input.cpp ..\Source\Junk2DSprite.cpp ..\Source\MainGame.cpp ..\Source\textureManager.cpp ..\Source\winmain.cpp
+         winmain.cpp
+         textureManager.cpp
+         MainGame.cpp
+     1>c:\users\min\documents\github\junkengine\junkengine\source\maingame.cpp(73): warning C4553: '==': operator has no effect; did you intend '='?
+     1>c:\users\min\documents\github\junkengine\junkengine\source\maingame.cpp(78): warning C4553: '==': operator has no effect; did you intend '='?
+     1>c:\users\min\documents\github\junkengine\junkengine\source\maingame.cpp(83): warning C4553: '==': operator has no effect; did you intend '='?
+     1>c:\users\min\documents\github\junkengine\junkengine\source\maingame.cpp(88): warning C4553: '==': operator has no effect; did you intend '='?
+         Junk2DSprite.cpp
+     1>c:\users\min\documents\github\junkengine\junkengine\source\junk2dsprite.cpp(187): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+         input.cpp
+         graphics.cpp
+         game.cpp
+     1>c:\users\min\documents\github\junkengine\junkengine\source\game.cpp(242): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+         Junk2Dentity.cpp
+         Generating Code...
+       Link:
+         E:\programs\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Debug\JunkEngine.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Debug\JunkEngine.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Debug\JunkEngine.lib" /MACHINE:X86 Debug\Junk2Dentity.obj
+         Debug\game.obj
+         Debug\graphics.obj
+         Debug\input.obj
+         Debug\Junk2DSprite.obj
+         Debug\MainGame.obj
+         Debug\textureManager.obj
+         Debug\winmain.obj
+     1>Junk2Dentity.obj : error LNK2019: unresolved external symbol _D3DXVec2Normalize@8 referenced in function "public: static void __cdecl Graphics::Vector2Normalize(struct D3DXVECTOR2 *)" (?Vector2Normalize@Graphics@@SAXPAUD3DXVECTOR2@@@Z)
+     1>game.obj : error LNK2019: unresolved external symbol __imp__timeBeginPeriod@4 referenced in function "public: virtual void __thiscall Game::run(struct HWND__ *)" (?run@Game@@UAEXPAUHWND__@@@Z)
+     1>game.obj : error LNK2019: unresolved external symbol __imp__timeEndPeriod@4 referenced in function "public: virtual void __thiscall Game::run(struct HWND__ *)" (?run@Game@@UAEXPAUHWND__@@@Z)
+     1>graphics.obj : error LNK2019: unresolved external symbol _Direct3DCreate9@4 referenced in function "public: void __thiscall Graphics::initialize(struct HWND__ *,int,int,bool)" (?initialize@Graphics@@QAEXPAUHWND__@@HH_N@Z)
+     1>graphics.obj : error LNK2019: unresolved external symbol _D3DXMatrixTransformation2D@28 referenced in function "public: void __thiscall Graphics::drawSprite(struct SpriteData const &,unsigned long)" (?drawSprite@Graphics@@QAEXABUSpriteData@@K@Z)
+     1>graphics.obj : error LNK2019: unresolved external symbol _D3DXCreateSprite@8 referenced in function "public: void __thiscall Graphics::initialize(struct HWND__ *,int,int,bool)" (?initialize@Graphics@@QAEXPAUHWND__@@HH_N@Z)
+     1>graphics.obj : error LNK2019: unresolved external symbol _D3DXGetImageInfoFromFileA@8 referenced in function "public: long __thiscall Graphics::loadTexture(char const *,unsigned long,unsigned int &,unsigned int &,struct IDirect3DTexture9 * &)" (?loadTexture@Graphics@@QAEJPBDKAAI1AAPAUIDirect3DTexture9@@@Z)
+     1>graphics.obj : error LNK2019: unresolved external symbol _D3DXCreateTextureFromFileExA@56 referenced in function "public: long __thiscall Graphics::loadTexture(char const *,unsigned long,unsigned int &,unsigned int &,struct IDirect3DTexture9 * &)" (?loadTexture@Graphics@@QAEJPBDKAAI1AAPAUIDirect3DTexture9@@@Z)
+     1>input.obj : error LNK2019: unresolved external symbol _XInputGetState@8 referenced in function "public: void __thiscall Input::checkControllers(void)" (?checkControllers@Input@@QAEXXZ)
+     1>input.obj : error LNK2019: unresolved external symbol _XInputSetState@8 referenced in function "public: void __thiscall Input::vibrateControllers(float)" (?vibrateControllers@Input@@QAEXM@Z)
+     1>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Debug\JunkEngine.exe : fatal error LNK1120: 10 unresolved externals
+     1>Done Building Project "C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\JunkEngine\JunkEngine.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:07.06

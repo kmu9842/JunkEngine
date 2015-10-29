@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Game" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GABgAgUAQDABAAAAABEBQAUgAAiBBBgIoBAAAAiUICA=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\game.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="ObjectsEntity" />
+      <Field Name="graphics" />
+      <Field Name="input" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Graphics" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAgASgAEBIAkEIRAREEAAACACBQEBAQLIAECAAgAAAE=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\graphics.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainGame" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <AssociationLine Name="runner3" Type="Junk2DEntity" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.188" Y="3.191" />
+        <Point X="1.182" Y="3.265" />
+        <Point X="1.182" Y="5.25" />
+        <Point X="5" Y="5.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.391" Y="2.331" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAABAAAAAAGgAAAAAAAAAABIIDQAAAAUAAA=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\MainGame.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="runner" />
+      <Field Name="runner2" />
+      <Field Name="runner3" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Input" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A8AQRAABW0AROEOABMEIIEWYHEEAwBBUQFAIAQgBAgA=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\input.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureManager" Collapsed="true">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAABAAAgQARIEAAAAABAABQggABAAAAAAAAEA=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\textureManager.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="graphics" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Junk2DEntity" Collapsed="true">
+    <Position X="5" Y="4.75" Width="2" />
+    <InheritanceLine Type="Junk2DSprite">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="0.048" Y="0.8" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>oYgIhMgBSBgBhBAAYgFgQAkAAAQBBzBIGYRAJEIESBI=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\Junk2Dentity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="std::vector&lt;_Ty, _Alloc&gt;" Collapsed="true">
+    <Position X="5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IUoEEIEqCLBMUEBAAKMIAgASAgUESAIAxQMwgwAEQgI=</HashCode>
+      <FileName>e:\programs\VC\include\vector</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Junk2DSprite" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>cCgQAZhAgDAELgEAAKM+AIIACACpwgkCAACgTmQEAkQ=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\Junk2DSprite.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="graphics" />
+      <Field Name="textureManager" />
+      <Field Name="texture" />
+      <Field Name="spriteData" />
+    </ShowAsAssociation>
+  </Class>
+  <Struct Name="SpriteData" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAQAQAAAIAICAAAAAgAAAABgAABAAAA=</HashCode>
+      <FileName>C:\Users\MIN\Documents\GitHub\JunkEngine\JunkEngine\Headers\graphics.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>
