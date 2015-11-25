@@ -13,6 +13,8 @@ private:
 	Player player;
 	Map* map;
 
+	int mapArray[20][9] = {0,};
+
 	float time = 0;
 
     // º¯¼ö

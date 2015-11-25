@@ -72,6 +72,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Headers\Block.cpp" />
     <ClCompile Include="..\Source\Junk2Dentity.cpp" />
     <ClCompile Include="..\Source\game.cpp" />
     <ClCompile Include="..\Source\graphics.cpp" />
@@ -84,6 +85,7 @@
     <ClCompile Include="PlayerClass.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Headers\Block.h" />
     <ClInclude Include="..\Headers\constants.h" />
     <ClInclude Include="..\Headers\Junk2Dentity.h" />
     <ClInclude Include="..\Headers\game.h" />

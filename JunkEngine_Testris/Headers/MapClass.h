@@ -1,5 +1,5 @@
-#ifndef _PLAYERCLASS_H              
-#define _PLAYERCLASS_H
+#ifndef _MAPCLASS_H              
+#define _MAPCLASS_H
 #define WIN32_LEAN_AND_MEAN
 
 #include "Junk2Dentity.h"

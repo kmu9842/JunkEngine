@@ -24,12 +24,8 @@ void MainGame::initialize(HWND hwnd)
 	}
 
 	// 이미지 정보름 미리 선언
-	player.initialize(graphics, "..\\Resources\\player.png", 30, 30, 1);
-	player.setDegrees(0);
-	player.setXY(map->getMapX()+65, map->getMapY()+65);
-	addEntity(&player);
-
 	
+	addEntity(&player);
 
 	// mapInput("//map.minfo");
 	// LoadMap();
@@ -53,28 +49,15 @@ void MainGame::update()
 	
 	//collisions();
 
-	//runner.collidesWith(runner2);
-
-	/*
-	if (input->isKeyDown(VK_RIGHT)) {
-		if (player.dontMoveRect[0] != 1) {
-			map->MoveMap(map->getMapX() - 1, map->getMapY());
-		}	
+	//runner.collidesWith(runner2);	
+	
+	if (input->isKeyUp(VK_RIGHT)) {
+			
 	}
 
-	if (input->isKeyDown(VK_LEFT) && player.dontMoveRect[1] != 1) {
-		map->MoveMap(map->getMapX() + 1, map->getMapY());
+	if (input->isKeyUp(VK_LEFT) && player.dontMoveRect[1] != 1) {
+		
 	}
-
-	if (input->isKeyDown(VK_UP)) {
-		if (player.dontMoveRect[2] != 1) {
-			map->MoveMap(map->getMapX(), map->getMapY() + 1);
-		}	
-	}
-
-	if (input->isKeyDown(VK_DOWN) && player.dontMoveRect[3] != 1) {
-		map->MoveMap(map->getMapX(), map->getMapY() - 1);
-	}*/
 
 	//runner.update(frameTime);
 }
@@ -100,7 +83,6 @@ void MainGame::render()
 // 예약된 비디오 메모리들 해제
 void MainGame::releaseAll()
 {
-
 	Game::releaseAll();
 	return;
 }
