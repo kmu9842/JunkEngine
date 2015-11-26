@@ -7,15 +7,15 @@
 // 메인 게임 클래스, Game클래스로 부터 상속 받음
 class MainGame : public Game
 {
-private:	
+private:
 
 	// 게임 요소들
-	Player player;
+	Block b;
 	Map* map;
 
 	int mapArray[20][9] = {0,};
 
-	float time = 0;
+	float timeCheck = 0;
 
     // 변수
 	bool vibrate = true;

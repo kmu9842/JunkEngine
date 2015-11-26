@@ -9,13 +9,13 @@
 
 #include "gameError.h"
 #include "MapClass.h"
-#include "PlayerClass.h"
+#include "Block.h"
 
 class Game
 {
 protected:
 	// 충돌 배열들
-	std::vector<Junk2DEntity*> ObjectsEntity;	// 충돌 요소들을 관리하는 배열
+	//std::vector<Junk2DEntity*> ObjectsEntity;	// 충돌 요소들을 관리하는 배열
 	std::vector<Junk2DEntity> MapsEntity;		// 지형 충돌 요소들을 관리하는 배열 (추후 다른 엔티티로 대체 예정)
 
 	// 공통 속성
@@ -35,6 +35,7 @@ protected:
 	int Maps[1000][1000];
 	int mapMaxX, mapMaxY;
 	
+	float GameTime = 0;
 
 public:
 	Game(); // 생성자
@@ -58,8 +59,8 @@ public:
 	Graphics* getGraphics() { return graphics; }	// Graphics 객체 포인터 반환
 	Input* getInput() { return input; }		// Input 객체 포인터 반환
 
-	virtual void addEntity(Junk2DEntity* entity);
-	virtual void UpdateEntity();
+	//virtual void addEntity(Junk2DEntity* entity);
+	//virtual void UpdateEntity();
 
 	void exitGame() { // 게임 종료
 		PostMessage(hwnd, WM_DESTROY, 0, 0);

@@ -20,19 +20,19 @@ class Junk2DEntity : public Junk2DSprite
     VECTOR2 distSquared;    // 원형 충돌체를 사용할 경우
     float   sumRadiiSquared;
     RECT    edge;           // 충돌체 상자의 모서리
-    VECTOR2 corners[4];     // for ROTATED_BOX collision detection
-    VECTOR2 edge01,edge03;  // edges used for projection
+    VECTOR2 corners[4];     
+	VECTOR2 edge01,edge03;  // 모서리
     float   edge01Min, edge01Max, edge03Min, edge03Max; // 꼭지점
-    VECTOR2 velocity;       // velocity
-    VECTOR2 deltaV;         // added to velocity during next call to update()
+    VECTOR2 velocity;       
+    VECTOR2 deltaV;         
     float   mass;           // 무게
-    float   rr;             // Radius squared variable
+    float   rr;             // 라디우스값
     float   force;          // 중력의 힘
     float   gravity;        // 중력
     Input   *input;         // 인풋시스템의 포인터
     HRESULT hr;             // standard return type
     bool    active;         // 활성화 여부
-    bool    rotatedBoxReady;// true when rotated collision box is ready
+    bool    rotatedBoxReady;
 	bool	isTrigger;		// 충돌체 여부
 	bool	isGravity;		// 중력 여부
 	bool	isGround;		// 바닥과 붙은지의 여부

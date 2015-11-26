@@ -19,13 +19,13 @@ void MainGame::initialize(HWND hwnd)
 
 	for (int i = 0; i < map->getWidth(); i++) {
 		for (int j = 0; j < map->getHeight(); j++) {
-			addEntity(map->getTiles(i, j));
+//			addEntity(map->getTiles(i, j));
 		}
 	}
 
 	// 이미지 정보름 미리 선언
 	
-	addEntity(&player);
+	// addEntity(&player);
 
 	// mapInput("//map.minfo");
 	// LoadMap();
@@ -50,15 +50,22 @@ void MainGame::update()
 	//collisions();
 
 	//runner.collidesWith(runner2);	
+
+	// 일정 시간마다 블록 아래로 하강, 아래에 블록이 있을 경우 중지
+	std::cout << GameTime << "\n";
+
+	// 그 칸이 전부 채워졌을 경우 한칸 비우기
 	
 	if (input->isKeyUp(VK_RIGHT)) {
-			
+		//b.moveLeft();
 	}
 
-	if (input->isKeyUp(VK_LEFT) && player.dontMoveRect[1] != 1) {
-		
+	if (input->isKeyUp(VK_LEFT)) {
+		//b.moveRight();
 	}
 
+
+	std::cout << "";
 	//runner.update(frameTime);
 }
 
@@ -75,7 +82,7 @@ void MainGame::render()
 	//BackGround.draw();
 
 	map->drawMap();
-	player.Junk2DSprite::draw();
+	//b.draw();
 
 	graphics->spriteEnd();
 }

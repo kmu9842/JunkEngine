@@ -163,18 +163,21 @@ void Game::run(HWND hwnd)
     if (!paused)                    
     {
         update();                   // 모든 게임요소 갱신
-		UpdateEntity();				// 오브젝트들의 충돌 검사
+		//UpdateEntity();				// 오브젝트들의 충돌 검사
         input->vibrateControllers(frameTime); // 컨트롤러 진동처리
     }
     renderGame();                   // 모든 요소 렌더링
     input->readControllers();       // 컨트롤러의 상태 읽기
+	GameTime += frameTime;
+
+	//std::cout << frameTime << "\n";
 
     input->clear(inputNS::KEYS_PRESSED); // 입력된것 초기화
 
 	system("CLS");
 	
 }
-
+/*
 void Game::addEntity(Junk2DEntity* entity) {
 	ObjectsEntity.push_back(entity);
 }
@@ -218,7 +221,7 @@ void Game::UpdateEntity()
 	for (auto i : ObjectsEntity) {
 		i->update(frameTime);
 	}
-}
+}*/
 
 void Game::mapInput(const char* mapName)
 {
