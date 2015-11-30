@@ -33,13 +33,11 @@ Junk2DSprite::Junk2DSprite()
 Junk2DSprite::~Junk2DSprite()
 {}
 
-//=============================================================================
 // Junk2DSprite 객체 초기화
 // 성공하면 true, 실패하면 false 반환
 // Graphics를 가리키는 포인터
 // 이미지의 픽셀 단위 폭, 높이, 텍스처의 행 수(1 ~ n)
 // TextureManager를 가리키는 포인터
-//=============================================================================
 bool Junk2DSprite::initialize(Graphics *g, int width, int height, int ncols,
 	TextureManager *textureM)
 {
@@ -75,11 +73,9 @@ bool Junk2DSprite::initialize(Graphics *g, int width, int height, int ncols,
 }
 
 
-//=============================================================================
 // color를 필터로 사용하여 이미지를 그림
 // 이전에 spriteBegin()이 호출 되며,
 // 이후 spriteEnd() 이 호출 된다.
-//=============================================================================
 void Junk2DSprite::draw(COLOR_ARGB color)
 {
 	if (!visible || graphics == NULL) {
@@ -95,12 +91,11 @@ void Junk2DSprite::draw(COLOR_ARGB color)
 		graphics->drawSprite(spriteData, color);        // color를 필터로 사용
 }
 
-//=============================================================================
+
 // 지정한 SpriteData를 사용하여 이미지를 그림
 //   SpriteData.rect는 텍스처를 선택하는 데 사용
 // 이전에 spriteBegin()이 호출 되며,
 // 이후 spriteEnd() 이 호출 된다.
-//=============================================================================
 void Junk2DSprite::draw(SpriteData sd, COLOR_ARGB color)
 {
 	if (!visible || graphics == NULL)
@@ -115,26 +110,22 @@ void Junk2DSprite::draw(SpriteData sd, COLOR_ARGB color)
 		graphics->drawSprite(sd, color);        // color를 필터로 사용
 }
 
-//=============================================================================
+
 // update
-// 일반적으로 프레임당 1번 호출
+// 프레임당 1번 호출
 // frameTime은 이동이나 애니메이션의 속도를 조절하는데 사용
-//=============================================================================
 void Junk2DSprite::update(float frameTime)
 {
-	if (endFrame - startFrame > 0)          // 애니메이션 동작이 있는 스프라이트 일 경우
-	{
+	if (endFrame - startFrame > 0) {          // 애니메이션 동작이 있는 스프라이트 일 경우
 		animTimer += frameTime;             // 전체 경과 시간 추가
-		if (animTimer > frameDelay)
-		{
+		if (animTimer > frameDelay) {
 			animTimer -= frameDelay;
 			currentFrame++;
-			if (currentFrame < startFrame || currentFrame > endFrame)
-			{
-				if (loop == true)            // 반복하는 애니메이션일 경우
+			if (currentFrame < startFrame || currentFrame > endFrame) {
+				if (loop == true) {            // 반복하는 애니메이션일 경우
 					currentFrame = startFrame;
-				else                         // 반복하지 않는 애니메이션일 경우
-				{
+				}
+				else {                        // 반복하지 않는 애니메이션일 경우
 					currentFrame = endFrame;
 					animComplete = true;     // 애니메이션 완료
 				}
@@ -147,17 +138,15 @@ void Junk2DSprite::update(float frameTime)
 // 이미지의 현재 프레임 설정
 void Junk2DSprite::setCurrentFrame(int c)
 {
-	if (c >= 0)
-	{
+	if (c >= 0) {
 		currentFrame = c;
 		animComplete = false;
-		setRect();                          // set spriteData.rect
+		setRect();                          // spriteData.rect 설정
 	}
 }
 
 // 텍스쳐 설정, 초기화
-void Junk2DSprite::settingTexture(Graphics *g, const char *filename)
-{
+void Junk2DSprite::settingTexture(Graphics *g, const char *filename) {
 	// 텍스쳐 초기화
 	if (!texture.initialize(g, filename)) {
 		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg texture"));

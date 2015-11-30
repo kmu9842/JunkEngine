@@ -10,10 +10,8 @@ class MainGame : public Game
 private:
 
 	// 게임 요소들
-	Block b;
+	Block* b;
 	Map* map;
-
-	int mapArray[20][9] = {0,};
 
 	float timeCheck = 0;
 

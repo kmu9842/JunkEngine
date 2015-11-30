@@ -174,7 +174,7 @@ void Game::run(HWND hwnd)
 
     input->clear(inputNS::KEYS_PRESSED); // 입력된것 초기화
 
-	system("CLS");
+	//system("CLS");
 	
 }
 /*
