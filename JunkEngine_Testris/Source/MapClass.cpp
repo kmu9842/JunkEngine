@@ -17,7 +17,7 @@ Map::Map(int x, int y, Graphics* g)
 	
 	for (int i = 0;i<width;i++) {
 		for (int j = 0;j<height;j++) {
-			if (j == 0 || i == 0 || i == width-1 || j == height-1) {
+			if ( i == 0 || i == width-1 || j == height-1) {
 				mapData[i][j] = 1;
 			}
 			else {

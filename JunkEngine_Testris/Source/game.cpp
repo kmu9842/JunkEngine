@@ -160,6 +160,8 @@ void Game::run(HWND hwnd)
 
     timeStart = timeEnd;
 
+	std::cin.clear();
+
     if (!paused)                    
     {
         update();                   // 모든 게임요소 갱신

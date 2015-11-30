@@ -5,6 +5,8 @@ Input::Input() // 디폴트 생성자
 	//-- 키 배열 초기화 --//
     for (size_t i = 0; i < inputNS::KEYS_ARRAY_LEN; i++)
         keysDown[i] = false;
+	for (size_t i = 0; i < inputNS::KEYS_ARRAY_LEN; i++)
+		keysUp[i] = false;
     for (size_t i = 0; i < inputNS::KEYS_ARRAY_LEN; i++)
         keysPressed[i] = false;
 	//--------------------//

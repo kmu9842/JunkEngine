@@ -10,13 +10,14 @@ class MainGame : public Game
 private:
 
 	// 게임 요소들
-	Block* b;
+	Block* b[4];
 	Map* map;
 
 	float timeCheck = 0;
 
     // 변수
 	bool vibrate = true;
+	int cnt = 0;
 
 public:
 	MainGame();

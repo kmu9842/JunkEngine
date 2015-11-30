@@ -25,6 +25,16 @@ public:
 	int getX() { return x; };
 	int getY() { return y; };
 
+	void setXY(int x, int y) { 
+		this->x = x; 
+		this->y = y; 
+	
+		blocks[0]->setXY(x, y);
+		blocks[1]->setXY(x, y);
+		blocks[2]->setXY(x, y);
+		blocks[3]->setXY(x, y);
+	};
+
 	void turnRight();
 	void turnLeft();
 

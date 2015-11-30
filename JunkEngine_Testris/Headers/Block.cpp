@@ -32,6 +32,7 @@ Block::Block(Graphics *g)
 void Block::moveRight()
 {
 	x -= 32;
+
 	for (int i = 0; i < 4; i++) {
 		blocks[i]->setX(blocks[i]->getX() - 32);
 	}
@@ -40,6 +41,7 @@ void Block::moveRight()
 void Block::moveLeft()
 {
 	x += 32;
+
 	for (int i = 0; i < 4; i++) {
 		blocks[i]->setX(blocks[i]->getX() + 32);
 	}
