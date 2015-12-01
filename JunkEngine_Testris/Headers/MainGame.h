@@ -18,6 +18,8 @@ private:
     // º¯¼ö
 	bool vibrate = true;
 	int cnt = 0;
+	int blocktag = 0;
+	int dir = 1;
 
 public:
 	MainGame();
@@ -30,6 +32,9 @@ public:
     void render();      // "
     void releaseAll();
     void resetAll();
+	void dirTetrisBlock();
+
+	void SetTetrisBlock();
 
 };
 

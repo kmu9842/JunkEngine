@@ -28,8 +28,13 @@ public :
 
 	virtual Junk2DEntity* getTiles(int x, int y) { return &tiles[x][y]; };
 
-	virtual int getTileData(int x, int y) { return mapData[y][x]; };
-	virtual void setTileData(int x, int y, int data) { mapData[y][x] = data; };
+	virtual int getTileData(int x, int y) { 
+		if (x < 0 || y < 0) return 0;
+		return mapData[x][y]; 
+	};
+	virtual void setTileData(int x, int y, int data) { 
+		mapData[x][y] = data; 
+	};
 
 	virtual void drawMap();
 	virtual void MoveMap(int x, int y);

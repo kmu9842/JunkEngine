@@ -10,12 +10,10 @@
 
 class Block {
 private:
-	direction thisDir;
-	shapeSet thisShape;
 
 	int x, y;
 
-	Junk2DEntity* blocks[4];
+	Junk2DEntity* blocks;
 
 public:
 	Block() {};
@@ -29,14 +27,8 @@ public:
 		this->x = x; 
 		this->y = y; 
 	
-		blocks[0]->setXY(x, y);
-		blocks[1]->setXY(x, y);
-		blocks[2]->setXY(x, y);
-		blocks[3]->setXY(x, y);
+		blocks->setXY(x, y);
 	};
-
-	void turnRight();
-	void turnLeft();
 
 	void moveRight();
 	void moveLeft();

@@ -15,26 +15,26 @@ Map::Map(int x, int y, Graphics* g)
 	TileData2.setTrigger(false);
 	TileData2.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
 	
-	for (int i = 0;i<width;i++) {
+ 	for (int i = 0;i<width;i++) {
 		for (int j = 0;j<height;j++) {
 			if ( i == 0 || i == width-1 || j == height-1) {
-				mapData[i][j] = 1;
+				mapData[j][i] = 1;
 			}
 			else {
-				mapData[i][j] = 0;
+				mapData[j][i] = 0;
 			}
 		}
 	}
 
 	for (int i = 0; i<width; i++) {
 		for (int j = 0; j<height; j++) {
-			if (mapData[i][j] == 1) {
-				tiles[i][j] = TileData;
+			if (mapData[j][i] == 1) {
+				tiles[j][i] = TileData;
 			}
-			if (mapData[i][j] == 0) {
-				tiles[i][j] = TileData2;
+			else if (mapData[j][i] == 0) {
+				tiles[j][i] = TileData2;
 			}
-			tiles[i][j].setXY(mapX + (i + 1) * 32, mapY + (j + 1) * 32);
+			tiles[j][i].setXY(mapX + (i + 1) * 32, mapY + (j + 1) * 32);
 		}
 	}
 
@@ -54,9 +54,9 @@ Map::Map()
 
 	for (int i = 0; i<width; i++) {
 		for (int j = 0; j<height; j++) {
-			if (mapData[i][j] != 0) {
-				tiles[i][j] = TileData;
-				tiles[i][j].setXY(mapX + i*32, mapY + j*32);
+			if (mapData[j][i] != 0) {
+				tiles[j][i] = TileData;
+				tiles[j][i].setXY(mapX + i*32, mapY + j*32);
 			}
 		}
 	}
@@ -70,8 +70,8 @@ void Map::drawMap()
 {
 	for (int i = 0; i < width; i++) {
 		for (int j = 0; j < height; j++) {
-			if (mapData[i][j] != 0) {
-				tiles[i][j].draw();
+			if (mapData[j][i] != 0) {
+				tiles[j][i].draw();
 			}
 		}
 	}
