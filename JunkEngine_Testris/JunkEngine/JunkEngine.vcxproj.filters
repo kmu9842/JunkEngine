@@ -45,7 +45,7 @@
     <ClCompile Include="..\Source\MapClass.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="..\Headers\Block.cpp">
+    <ClCompile Include="..\Source\Block.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -149,12 +149,12 @@ void Junk2DSprite::setCurrentFrame(int c)
 void Junk2DSprite::settingTexture(Graphics *g, const char *filename) {
 	// 텍스쳐 초기화
 	if (!texture.initialize(g, filename)) {
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg texture"));
+		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing texture"));
 	}
 
 	// 이미지 초기화
 	if (!this->initialize(g, 0, 0, 0, &texture)) {
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg"));
+		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing "));
 	}
 }
 
@@ -162,12 +162,12 @@ void Junk2DSprite::settingTexture(Graphics * g, const char * filename, int width
 {
 	// 텍스쳐 초기화
 	if (!texture.initialize(g, filename)) {
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg texture"));
+		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing texture"));
 	}
 
 	// 이미지 초기화
 	if (!this->initialize(g, width, height, nCols, &texture)) {
-		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing bg"));
+		throw(GameError(gameErrorNS::FATAL_ERROR, "Error initializing"));
 	}
 }
 

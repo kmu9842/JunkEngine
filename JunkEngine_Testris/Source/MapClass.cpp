@@ -5,12 +5,12 @@ Map::Map(int x, int y, Graphics* g)
 	width = x;
 	height = y;
 	
-	TileData.initialize(g, "..\\Resources\\block1.png", 30, 30, 1);
+	TileData.initialize(g, "block1.png", 30, 30, 1);
 	TileData.setDegrees(0);
 	TileData.setTrigger(true);
 	TileData.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
 	
-	TileData2.initialize(g, "..\\Resources\\block2.png", 30, 30, 1);
+	TileData2.initialize(g, "block2.png", 30, 30, 1);
 	TileData2.setDegrees(0);
 	TileData2.setTrigger(false);
 	TileData2.setCollisionType(Junk2DentityNS::COLLISION_TYPE::BOX);
